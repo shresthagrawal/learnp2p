@@ -1,7 +1,7 @@
 
 - [Welcome](/README.md)
 
-- [**#0 Getting Started**](0/introduction.md)
+<!-- - [**#0 Getting Started**](0/introduction.md)
 
     - [Setup](0/setup.md)
     - [Running a Custom Node](0/running-a-custom-node.md)
@@ -59,9 +59,4 @@
 - [Documentation](https://substrate.dev/docs/)
 - [Report an Issue](https://github.com/substrate-developer-hub/substrate-collectables-workshop/issues)
 - [r/substrate](https://www.reddit.com/r/substrate)
-
----
-
-- [:us: English](/README.md)
-- [:cn: 中文](/zh-cn/README.md)
-- [:jp: 日本語](/ja-jp/README.md)
+ -->

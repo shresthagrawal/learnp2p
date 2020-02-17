@@ -2,10 +2,10 @@
 
 # Js-Libp2p Chat Tutorial
 
-> Learn to build p2p chat app using Js-Libp2p
+> Getting hands dirty with Js-Libp2p!
 
 [Get Started](README.md)
-[GitHub](https://github.com/substrate-developer-hub/substrate-collectables-workshop)
+[GitHub](https://github.com/shresthagrawal/jslibp2p-chat-tutorial)
 
 <!-- Overwrite Background Image with black -->
 ![color](#FFFFFF)

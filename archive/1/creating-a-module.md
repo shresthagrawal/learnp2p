@@ -1,4 +1,4 @@
-Creating a Module
+Creating- a Module
 ===
 
 To start, we need to create a new module for our runtime. For that we will work with an empty module template which we will place in a new `substratekitties.rs` file:
