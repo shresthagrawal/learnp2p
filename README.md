@@ -7,6 +7,8 @@ This is an interactive self-placed workshop. The aim to the workshop is to help 
 
 The material will focus on making user understand the dictionary of libp2p, then find right documentation, and self apply it. 
 
+>This workshop currently only focuses on the node.js implementation of libp2p!
+
 ## For Whom?
 Have you always heard the keyword `libp2p` but were never able to wrap your head around? Have you tried to undertand what the heck is a modular networking stack and then got deeper into `dht, multiadrs, nat transversal, and every networking term..` and never came out? Have you tried to learn libp2p but was frustated due to the awesome docs and ended up reading the source code?
 
@@ -30,9 +32,8 @@ It is totally normal to get stuck from time to time or to not understand what th
 
 ## Acknowledgement
 
-This tutorial is an extension to the [jslibp2p-chat-example](https://github.com/libp2p/js-libp2p-examples/tree/master/chat/nodejs).  
-
-This tutorial was highly inspired with [Substrate-Kitties](https://github.com/substrate-developer-hub/substrate-collectables-workshop) and [Crypto-Zombie](https://cryptozombies.io/). 
+* This tutorial is an extension to the [jslibp2p-chat-example](https://github.com/libp2p/js-libp2p-examples/tree/master/chat/nodejs).  
+* This tutorial was highly inspired with [Substrate-Kitties](https://github.com/substrate-developer-hub/substrate-collectables-workshop) and [Crypto-Zombie](https://cryptozombies.io/). 
 
 
 

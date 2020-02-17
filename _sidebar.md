@@ -3,8 +3,8 @@
 
 - [**#0 Getting Started**](0/introduction.md)
     
+    - [Setup](0/setup.md)
     - [Test](0/test.md)
-    - [Setup](0/test.md)
 
 - [Glossary](https://substrate.dev/docs/overview/glossary)
 - [Documentation](https://substrate.dev/docs/)
