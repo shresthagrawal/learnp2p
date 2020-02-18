@@ -34,6 +34,5 @@ It is totally normal to get stuck from time to time or to not understand what th
 
 * This tutorial is an extension to the [jslibp2p-chat-example](https://github.com/libp2p/js-libp2p-examples/tree/master/chat/nodejs).  
 * This tutorial was highly inspired with [Substrate-Kitties](https://github.com/substrate-developer-hub/substrate-collectables-workshop) and [Crypto-Zombie](https://cryptozombies.io/). 
-
-
+TODO: Ackwnolede SimpleAsWater, EdCon2020, GIVO
 

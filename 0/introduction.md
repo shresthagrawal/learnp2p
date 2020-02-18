@@ -1,6 +1,6 @@
 What is libp2p?
 ===============
->Good question! The one-liner pitch is that libp2p is a modular system of protocols, specifications and libraries that enable the development of peer-to-peer network applications.
+>Good question! The one-liner pitch is that libp2p is a modular system of protocols, specifications and libraries that enable the development of peer-to-peer network applications. 
 
 The best way to understand libp2p is to just understand what its each module does which we would learn in more dept in every chapter.
 
