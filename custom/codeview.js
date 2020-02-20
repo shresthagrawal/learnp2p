@@ -139,7 +139,7 @@ function loadEditor(editor_text, read_only, template_update) {
         }
 
         window.monaco_editor = monaco.editor.create(document.getElementById('editor'), {
-            language: "rust",
+            language: "javascript",
             theme: "vs-dark",
             readOnly: read_only,
             automaticLayout: true,
@@ -169,7 +169,7 @@ function loadDiffEditor(original_text, modified_text) {
         }
 
         window.monaco_editor = monaco.editor.createDiffEditor(document.getElementById('editor'), {
-            language: "rust",
+            language: "javascript",
             theme: "vs-dark",
             enableSplitViewResizing: false,
             renderSideBySide: false,
@@ -177,8 +177,8 @@ function loadDiffEditor(original_text, modified_text) {
             automaticLayout: true
         });
 
-        var originalModel = monaco.editor.createModel(original_text, "rust");
-        var modifiedModel = monaco.editor.createModel(modified_text, "rust");
+        var originalModel = monaco.editor.createModel(original_text, "javascript");
+        var modifiedModel = monaco.editor.createModel(modified_text, "javascript");
 
         window.monaco_editor.setModel({
             original: originalModel,
