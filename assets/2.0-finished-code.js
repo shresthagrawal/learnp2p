@@ -8,6 +8,8 @@ const WS = require('libp2p-websockets')
 const WStar = require('libp2p-webrtc-star')
 const Wrtc = require('wrtc')
 
+const multiaddr = require('multiaddr')
+
 const WebrtcStar = new WStar({ wrtc: Wrtc })
 
 let options = {
@@ -23,6 +25,9 @@ async function main() {
     libp2p.on('start', () => {
         console.info(`Libp2p Started`)
     })
+
+    libp2p.peerInfo.multiaddrs.add('/ip4/0.0.0.0/tcp/0')
+    libp2p.peerInfo.multiaddrs.add('/ip4/0.0.0.0/tcp/0/ws')
 
     await libp2p.start();
 }

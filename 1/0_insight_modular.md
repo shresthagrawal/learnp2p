@@ -11,6 +11,3 @@
 >TODO: Add proper links
 
 >TODO: Explain the concept of skeleton and interfaces better. May be use an example.
-
-* Creating a libp2p bundle, add config
-* try it yourself 

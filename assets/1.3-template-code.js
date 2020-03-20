@@ -2,20 +2,27 @@
 
 const util = require('util');
 const { createLibp2p } = require('libp2p')
-// TODO: require `libp2p-tcp`, `libp2p-websockets`, and `libp2p-webrtc-star`
-// TODO: require `wrtc`
 
-// TODO: Create a new instance of `libp2p-webrtc-star`, and pass it { wrtc }
+const TCP = require('libp2p-tcp')
+const WS = require('libp2p-websockets')
+const WStar = require('libp2p-webrtc-star')
+const Wrtc = require('wrtc')
+
+const WebrtcStar = new WStar({ wrtc: Wrtc })
 
 let options = {
     modules: {
-    transport: [/* TODO: add `libp2p-tcp`, `libp2p-websockets`, and your `libp2p-webrtc-star` instance */]
-  }
+        transport: [ TCP, WS, WebrtcStar ]
+    }
 }
 
 async function main() {
     // Create a libp2p instance
     let libp2p = await util.promisify(createLibp2p)(options)
+
+    // Initialise a listener for libp2p to start
+
+    // Start libp2p
 }
 
 main()

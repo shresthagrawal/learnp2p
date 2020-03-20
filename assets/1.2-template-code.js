@@ -1,12 +1,21 @@
-'use-strict'
+'use strict'
 
-// Include `util` from the standard lib
-// Include `createLibp2p` from the libp2p
+const util = require('util');
+const { createLibp2p } = require('libp2p')
+// TODO: require `libp2p-tcp`, `libp2p-websockets`, and `libp2p-webrtc-star`
+// TODO: require `wrtc`
 
+// TODO: Create a new instance of `libp2p-webrtc-star`, and pass it { wrtc }
 
-// Create an empty map options
+let options = {
+    modules: {
+    transport: [/* TODO: add `libp2p-tcp`, `libp2p-websockets`, and your `libp2p-webrtc-star` instance */]
+  }
+}
 
-// Declare async main
-// Inside main declare libp2p node using promisified createLibp2p and pass options
+async function main() {
+    // Create a libp2p instance
+    let libp2p = await util.promisify(createLibp2p)(options)
+}
 
-// Call main
+main()
