@@ -18,14 +18,14 @@ Create a basic libp2p node
 
 #### ** Template **
 
-[embedded-code](./assets/1.2-template-code.js ':include :type=code embed-template')
+[embedded-code](../assets/1.2-template-code.js ':include :type=code embed-template')
 
 #### ** Solution **
 
-[embedded-code-final](./assets/1.2-finished-code.js ':include :type=code embed-final')
+[embedded-code-final](../assets/1.2-finished-code.js ':include :type=code embed-final')
 
 #### ** Previous Chapter Solution **
 
-[embedded-code-previous](./assets/1.1-finished-code.js ':include :type=code embed-previous')
+[embedded-code-previous](../assets/1.1-finished-code.js ':include :type=code embed-previous')
 
 <!-- tabs:end -->
