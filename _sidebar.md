@@ -11,10 +11,11 @@
     - [Add Transports](1/2_add_transport.md)
     - [Start Libp2p](1/3_start_libp2p.md)
 
-- [**#2 Multiadrs**](2/introduction.md)
+- [**#2 Multiadrs & Bootstrap**](2/introduction.md)
     - [Future proof Libp2p](2/0_insight_futureproof.md)
-    - [Create Bootstrap](2/1_create_bootstrap.md)
-    - [Dial Bootstrap](2/2_dial_bootstrap.md)
+    - [Peer Info](2/1_peer_info.md)
+    - [Create Bootstrap](2/2_create_bootstrap.md)
+    - [Dial Bootstrap](2/3_dial_bootstrap.md)
 
 - [**#2 Mplex and Chat Protocol**](3/introduction.md)
     - [Create Chat Protocol](3/0_create-protocol.md)

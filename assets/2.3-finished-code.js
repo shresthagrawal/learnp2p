@@ -1,6 +1,6 @@
 'use strict'
 
-const util = require('util');
+const util = require('util')
 const { createLibp2p } = require('libp2p')
 
 const TCP = require('libp2p-tcp')
@@ -18,22 +18,32 @@ let options = {
     }
 }
 
+const bootstrapAddress = multiaddr('/ip4/0.0.0.0/tcp/63785/ipfs/QmWjz6xb8v9K4KnYEwP5Yk75k5mMBCehzWFLCvvQpYxF3d');
+
+async function onStart(libp2p) {
+    libp2p.dial(bootstrapAddress, (err) => {
+        if (err) return console.error(err)
+    })
+}
+
 async function main() {
     // Create a libp2p instance
     let libp2p = await util.promisify(createLibp2p)(options)
 
     libp2p.on('start', () => {
         console.info(`Libp2p Started`)
-        // Use libp2p.peerinfo.multiaddrs to print the list of addresses
-    })
+        libp2p.peerInfo.multiaddrs.forEach(ma => console.log(ma.toString()))
+        onStart(libp2p);
+    });
 
-    // Add 'connection:start' listener as above, refer to documentation
-    // Inside the listener print the address of the connected peer
+    libp2p.on('connection:start', (peerInfo) => {
+        console.info(`Connected to ${peerInfo.id.toB58String()}!`)
+    })
 
     libp2p.peerInfo.multiaddrs.add('/ip4/0.0.0.0/tcp/0')
     libp2p.peerInfo.multiaddrs.add('/ip4/0.0.0.0/tcp/0/ws')
 
-    await libp2p.start();
+    await libp2p.start()
 }
 
 main()

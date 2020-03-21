@@ -7,7 +7,6 @@ Also modularity gives future proofing.
 Try it yourself
 ---------------
 * add the multiaddrs for tcp and ws
-* add listener for peer connect
 
 <!-- tabs:start -->
 

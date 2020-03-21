@@ -36,7 +36,9 @@ async function main() {
 
     await libp2p.start();
     const targetAddress = multiaddr('/ip4/127.0.0.1/tcp/63785/ipfs/QmWjz6xb8v9K4KnYEwP5Yk75k5mMBCehzWFLCvvQpYxF3d')
-    libp2p.dial(targetAddress)
+    libp2p.dial(targetAddress, (err, conn) => {
+        console.log(err, conn);
+    })
 }
 
 main()
