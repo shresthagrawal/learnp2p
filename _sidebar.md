@@ -17,8 +17,12 @@
     - [Create Bootstrap](2/2_create_bootstrap.md)
     - [Dial Bootstrap](2/3_dial_bootstrap.md)
 
-- [**#2 Mplex and Chat Protocol**](3/introduction.md)
-    - [Create Chat Protocol](3/0_create-protocol.md)
+- [**#3 Secure Connection & Secio**](3/introduction.md)
+    - [Secio](3/0_secio_node.md)
+    - [Add Secio to Bootstrap](3/1_secio_bootstrap.md)
+
+- [**#4 Mplex and Chat Protocol**](4/introduction.md)
+    - [Create Chat Protocol](4/0_create-protocol.md)
 
     
 

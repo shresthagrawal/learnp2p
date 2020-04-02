@@ -20,7 +20,7 @@ Now you are able to make a connection between the bootstrap and a user. This con
 
 #### ** Previous Chapter Solution **
 
-[embedded-code-previous](../assets/2.2-finished-code.js ':include :type=code embed-previous')
+[embedded-code-previous](../assets/2.1-finished-code.js ':include :type=code embed-previous')
 
 <!-- tabs:end -->
 
