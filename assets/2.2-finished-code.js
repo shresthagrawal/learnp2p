@@ -1,7 +1,6 @@
 'use strict'
 
-const util = require('util');
-const { createLibp2p } = require('libp2p')
+const Libp2p = require('libp2p')
 
 const TCP = require('libp2p-tcp')
 const WS = require('libp2p-websockets')
@@ -12,7 +11,7 @@ const multiaddr = require('multiaddr')
 
 const PeerInfo = require('peer-info')
 
-const WebrtcStar = new WStar({ wrtc: Wrtc })
+const transportKey = WStar.prototype[Symbol.toStringTag]
 
 const info = {
   "id": "QmWjz6xb8v9K4KnYEwP5Yk75k5mMBCehzWFLCvvQpYxF3d",
@@ -22,22 +21,24 @@ const info = {
 
 let options = {
     modules: {
-        transport: [ TCP, WS, WebrtcStar ]
+        transport: [ TCP, WS, WStar ]
+    },
+    config: {
+        transport: {
+            [transportKey]: {
+                Wrtc
+            }
+        }
     }
 }
 
 async function main() {
-    let peerInfo = await util.promisify(PeerInfo.create)(info);
+    let peerInfo = await PeerInfo.create(info)
     options.peerInfo = peerInfo;
     // Create a libp2p instance
-    let libp2p = await util.promisify(createLibp2p)(options);
+    let libp2p = await Libp2p.create(options)
 
-    libp2p.on('start', () => {
-        console.info('Libp2p Started');
-        libp2p.peerInfo.multiaddrs.forEach(ma => console.log(ma.toString()));
-    })
-
-    libp2p.on('connection:start', (peerInfo) => {
+    libp2p.on('peer:connect', (peerInfo) => {
         console.info(`Connected to ${peerInfo.id.toB58String()}!`)
     })
 
@@ -45,7 +46,8 @@ async function main() {
     libp2p.peerInfo.multiaddrs.add('/ip4/0.0.0.0/tcp/63786/ws')
 
     await libp2p.start();
-    
+    console.info('Libp2p Started');
+    libp2p.peerInfo.multiaddrs.forEach(ma => console.log(ma.toString()));
 }
 
 main()
