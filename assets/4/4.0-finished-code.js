@@ -1,7 +1,6 @@
 'use strict'
 
-const util = require('util')
-const { createLibp2p } = require('libp2p')
+const Libp2p = require('libp2p')
 
 const TCP = require('libp2p-tcp')
 const WS = require('libp2p-websockets')
@@ -34,12 +33,7 @@ let options = {
 
 async function main() {
     // Create a libp2p instance
-    let libp2p = await util.promisify(createLibp2p)(options)
-
-    libp2p.on('start', () => {
-        console.info(`Libp2p Started`)
-        libp2p.peerInfo.multiaddrs.forEach(ma => console.log(ma.toString()))
-    });
+    let libp2p = await Libp2p.create(options)
 
     libp2p.on('connection:start', (peerInfo) => {
         console.info(`Connected to ${peerInfo.id.toB58String()}!`)
