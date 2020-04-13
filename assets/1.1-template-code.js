@@ -1,12 +1,18 @@
 'use-strict'
 
-// Include `util` from the standard lib
-// Include `createLibp2p` from the libp2p
+// Require `libp2p` module
+// Require `libp2p-tcp` module
 
 
-// Create an empty map options
+// Add mandatory transport options needed to create libp2p instance
+let options = {
+    modules: {
+        transport: [ /* TODO: add `libp2p-tcp` instance */ ]
+    }
+}
 
 // Declare async main
-// Inside main declare libp2p node using promisified createLibp2p and pass options
+// Inside main declare libp2p node using `create` method of Libp2p module and pass options
+// See for youself the id of the libp2p node we have created by using libp2p node's peerInfo.id.toJSON()
 
 // Call main
