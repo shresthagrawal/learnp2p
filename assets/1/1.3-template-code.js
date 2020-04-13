@@ -20,8 +20,6 @@ async function main() {
     // Create a libp2p instance
     let libp2p = await util.promisify(createLibp2p)(options)
 
-    // Initialise a listener for libp2p to start
-
     // Start libp2p
 }
 
