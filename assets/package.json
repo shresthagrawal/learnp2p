@@ -7,15 +7,18 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "shresthagrawal.31@gmail.com",
+  "contributors": [
+    "prateek@marlin.pro"
+  ],
   "license": "ISC",
   "dependencies": {
-    "libp2p": "^0.25.4",
+    "libp2p": "^0.27.4",
     "libp2p-bootstrap": "^0.9.7",
     "libp2p-kad-dht": "^0.15.0",
     "libp2p-mdns": "^0.12.3",
     "libp2p-secio": "^0.11.1",
-    "libp2p-tcp": "^0.13.0",
-    "libp2p-webrtc-star": "^0.16.1",
+    "libp2p-tcp": "^0.14.4",
+    "libp2p-webrtc-star": "^0.17.9",
     "libp2p-websockets": "^0.12.2",
     "multiaddr": "^6.1.0",
     "peer-info": "^0.15.1",
