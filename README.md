@@ -3,7 +3,7 @@ Js Libp2p Chat Tutorial
 > Getting your hands dirty with libp2p!
 
 ## What is this?
-This is an interactive self-placed workshop. The aim of this workshop is to help the p2p enthusiasts to get started with libp2p. Through this workshop you will be able to build a completely decentralized chat system using the open source framework [js-libp2p](https://github.com/libp2p/js-libp2p/).  
+This is an interactive self-placed workshop. The aim of this workshop is to help the **p2p enthusiasts** to get started with libp2p. Through this workshop you will be able to build a completely decentralized chat system using the open source framework [js-libp2p](https://github.com/libp2p/js-libp2p/).  
 
 The material here will focus on making you understand the dictionary of libp2p, then find a right documentation, and apply it by yourself. 
 
@@ -24,11 +24,13 @@ It is totally normal to get stuck from time to time or to not understand what th
 ## [Let's begin!](/0/introduction.md)
 
 ## How to contribute
+
 * Open [issues on our GitHub](https://github.com/shresthagrawal/jslibp2p-chat-tutorial/issues)
+* Install node; For Unix-based consoles, open terminal and use the following command to install node - `sudo apt-get install nodejs`. Also install the node package manager, NPM, using the command - `sudo apt-get install npm`. 
+* Install **docsify** using the command `npm i docsify-cli -g`.
 * Fork and clone the [repository](https://github.com/shresthagrawal/jslibp2p-chat-tutorial)
-* Install node, from bash run `npm i docsify-cli -g` to install docsify
-* From bash run `docsify serve` to start the live server
-* Contribute by committing and pushing changes to a branch of your origin fork and creating a Pull Request to the upstream repository
+* Open terminal from the location of the cloned repository and from bash, run `docsify serve` to start a live server (local-host) in your browser. 
+* You can simply contribute by committing and pushing changes to a branch of your original fork and then by creating a Pull Request to the upstream repository.
 
 ## Acknowledgment
 
