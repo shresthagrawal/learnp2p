@@ -23,6 +23,14 @@ sudo apt-get install nodejs
 node -v | node -version
 ```
 
+	- It is also recommended to install the Node Package Manager (npm), which could simply be installed using the following command:
+```bash
+sudo apt-get install npm
+```
+	- Similarly, you can verify if that was installed correctly using the command:
+```bash
+npm -v 
+```
     - For other operating systems, please check the [official download page](https://nodejs.org/en/download/) of [node.js](https://nodejs.org/en/).
 
 ### To use the online editor

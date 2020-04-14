@@ -263,7 +263,9 @@ main.hidden {
   background: rgba(136,136,136,0.4);
 }
 .sidebar:hover::-webkit-scrollbar-track {
-  background: rgba(136,136,136,0.1);
+  backgroun<!-- Theme: Defaults -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-defaults.css">
+d: rgba(136,136,136,0.1);
 }
 .sidebar-toggle {
   background-color: transparent;
