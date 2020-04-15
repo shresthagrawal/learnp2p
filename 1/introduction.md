@@ -6,14 +6,15 @@ TODO: Add a cool gif about transports
 lets break it!
 
 ## What does transport means in p2p system?
-As the word transport says itself, it does transportation; but of data between two peers. Currently our Internet supports multiple standards of communication. These include TCP/IP, web-sockets, MQTT, etc. These standards are just a set of rules that both communicating parties have to follow in order for a successful communication. 
+As the word transport says itself, it does transportation; but of data between two peers. Currently our Internet uses & supports multiple standards of communication. These include the good-old and the most widely used TCP/IP protocol, web-sockets, MQTT, high-level protocols such as UDP etc. These standards are simply a set of rules that both communicating parties have to follow in order for a successful Internet communication. 
 
 >TODO: Verify and add transports. For each transport link to the official documentation to show how they differ in the core implementation but still have the same functionalities. 
 
-In a p2p system, it might be not clear about which of these standards does the other party supports. As these standards are drastically different from each other, it's difficult for a p2p system to implement each one from scratch. 
+In a p2p system, it might not be clear about which of these standards does the other party supports. As these standards are drastically different from each other, it's difficult for a p2p system to implement each one from scratch. 
 
 ## This is where libp2p transports come
-One thing that is very clear though every transport is very different in the core implementation it has certain operations in common eg. dialing other user, receiving packets, etc.
+Although one thing that is very clear which is that even though every type of transport is different from each other on the basis of its core implementation and structure, they have certain operations in common eg. dialing other user, receiving packets, etc.
+
 >TODO: Add better examples above. (Also, the sentence formation is incorrect)
 
 `libp2p` uses this commonality to come up with an interface (a set of functions) that any module needs to follow in order to be used in an transport. Not only that but it also provides the implementation of the most important once. 	
