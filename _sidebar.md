@@ -21,13 +21,16 @@
     - [Secio](3/0_secio_node.md)
     - [Add Secio to Bootstrap](3/1_secio_bootstrap.md)
 
-- [**#4 Mplex and Chat Protocol**](4/introduction.md)
-    - [Create Chat Protocol](4/0_create-protocol.md)
+- [**#4 Peer Discovery**](4/introduction.md)
 
+- [**#5 Mplex and Chat Protocol**](5/introduction.md)
+    - [Create Chat Protocol](5/0_create-protocol.md)
+
+- [**#6 PubSub**](6/introduction.md)
     
 
-- [Glossary](https://substrate.dev/docs/overview/glossary)
-- [Documentation](https://substrate.dev/docs/)
-- [Report an Issue](https://github.com/substrate-developer-hub/substrate-collectables-workshop/issues)
-- [r/substrate](https://www.reddit.com/r/substrate)
+<!-- - [Glossary](https://substrate.dev/docs/overview/glossary) -->
+- [Documentation](https://github.com/libp2p/js-libp2p/blob/master/README.md)
+- [Report an Issue](https://github.com/shresthagrawal/jslibp2p-chat-tutorial/issues)
+<!-- - [r/substrate](https://www.reddit.com/r/substrate) -->
 
