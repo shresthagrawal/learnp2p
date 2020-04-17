@@ -7,11 +7,11 @@ Try it yourelf.
 
 #### ** Template **
 
-[embedded-code](../assets/4.0-template-code.js ':include :type=code embed-template')
+[embedded-code](../assets/4/4.0-template-code.js ':include :type=code embed-template')
 
 #### ** Solution **
 
-[embedded-code-final](../assets/4.0-finished-code.js ':include :type=code embed-final')
+[embedded-code-final](../assets/4/4.0-finished-code.js ':include :type=code embed-final')
 
 #### ** Previous Chapter Solution **
 

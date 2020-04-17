@@ -12,15 +12,15 @@ Now you are able to make a connection between the bootstrap and a user. This con
 
 #### ** Template **
 
-[embedded-code](../assets/2.3-template-code.js ':include :type=code embed-template')
+[embedded-code](../assets/2/2.3-template-code.js ':include :type=code embed-template')
 
 #### ** Solution **
 
-[embedded-code-final](../assets/2.3-finished-code.js ':include :type=code embed-final')
+[embedded-code-final](../assets/2/2.3-finished-code.js ':include :type=code embed-final')
 
 #### ** Previous Chapter Solution **
 
-[embedded-code-previous](../assets/2.1-finished-code.js ':include :type=code embed-previous')
+[embedded-code-previous](../assets/2/2.1-finished-code.js ':include :type=code embed-previous')
 
 <!-- tabs:end -->
 

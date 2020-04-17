@@ -10,13 +10,14 @@ const Wrtc = require('wrtc')
 
 const multiaddr = require('multiaddr')
 
+const Mplex = require('pull-mplex')
 const Secio = require('libp2p-secio')
 
 const Bootstrap = require('libp2p-bootstrap')
 const MDNS = require('libp2p-mdns')
 const KadDHT = require('libp2p-kad-dht')
 
-const Chat = require('./5.0-finished-code')
+// TODO: require `chatprotocol as chat define in the last chapter`
 
 const WebrtcStar = new WStar({ wrtc: Wrtc })
 
@@ -24,6 +25,7 @@ let options = {
     modules: {
         transport: [ TCP, WS, WebrtcStar ],
         connEncryption: [ Secio ],
+        streamMuxer: [ Mplex ],
         peerDiscovery: [ Bootstrap, MDNS ],
         dht: KadDHT
     },
@@ -42,18 +44,7 @@ let options = {
     }
 }
 
-async function sendMessageToAll(message, libp2p) {
-    message = message.substring(0, message.length - 1)
-    let peers = libp2p.peerBook.getAllArray()
-    peers.forEach(async (peerInfo) => {
-        console.log(peerInfo.isConnected(), peerInfo.protocols.has(Chat.PROTOCOL))
-        if(!peerInfo.isConnected() || !peerInfo.protocols.has(Chat.PROTOCOL)) return
-        libp2p.dialProtocol(peerInfo, Chat.PROTOCOL, (err, stream) => {
-            if (err) return console.error('Could not negotiate chat protocol stream with peer', err)
-            Chat.send(message, stream)
-        })
-    })
-}
+// TODO: add dummy function to send message to all connected nodes
 
 
 async function main() {
@@ -65,6 +56,7 @@ async function main() {
         libp2p.peerInfo.multiaddrs.forEach(ma => console.log(ma.toString()))
     });
 
+    // Modify to peer:connect
     libp2p.on('connection:start', (peerInfo) => {
         console.info(`Connected to ${peerInfo.id.toB58String()}!`)
     })
@@ -73,9 +65,9 @@ async function main() {
     libp2p.peerInfo.multiaddrs.add('/ip4/0.0.0.0/tcp/0/ws')
 
     // Handle Message Recieved
-    libp2p.handle(Chat.PROTOCOL, Chat.handler)
+    // TODO: add libp2p handler to handle chat protocol
     // Send Message on User Input
-    process.stdin.on('data', message => sendMessageToAll(String(message), libp2p))
+    // TODO: on user typed message on console call the send message to all dummy function
 
     await libp2p.start()
 }

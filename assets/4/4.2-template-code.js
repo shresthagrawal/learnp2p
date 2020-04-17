@@ -14,9 +14,7 @@ const Secio = require('libp2p-secio')
 
 const Bootstrap = require('libp2p-bootstrap')
 const MDNS = require('libp2p-mdns')
-const KadDHT = require('libp2p-kad-dht')
-
-const Chat = require('./chat')
+// TODO: require `libp2p-kad-dht`
 
 const WebrtcStar = new WStar({ wrtc: Wrtc })
 
@@ -25,7 +23,7 @@ let options = {
         transport: [ TCP, WS, WebrtcStar ],
         connEncryption: [ Secio ],
         peerDiscovery: [ Bootstrap, MDNS ],
-        dht: KadDHT
+        // TODO: include kad-dht in the modules.dht
     },
     config: {
         peerDiscovery: {
@@ -33,16 +31,8 @@ let options = {
                 list: [ '/ip4/127.0.0.1/tcp/63785/ipfs/QmWjz6xb8v9K4KnYEwP5Yk75k5mMBCehzWFLCvvQpYxF3d' ]
             }
         },
-        dht: {
-            enabled: true,
-            randomwalk: {
-                enabled: true
-            }
-        } 
+        // TODO: add dht config 
     }
-}
-
-async function sendMessageToAll(message, libp2p) {
 }
 
 
@@ -61,11 +51,6 @@ async function main() {
 
     libp2p.peerInfo.multiaddrs.add('/ip4/0.0.0.0/tcp/0')
     libp2p.peerInfo.multiaddrs.add('/ip4/0.0.0.0/tcp/0/ws')
-
-    // Handle Message Recieved
-    libp2p.handle(ChatProtocol.PROTOCOL, ChatProtocol.handler)
-    // Send Message on User Input
-    process.stdin.on('data', message => sendMessageToAll(String(message), libp2p))
 
     await libp2p.start()
 }
