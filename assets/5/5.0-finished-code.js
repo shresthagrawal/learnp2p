@@ -19,12 +19,7 @@ function handler (protocol, stream) {
 function send (message, stream) {
     pull (
         pull.values([ message ]),
-        stream,
-        pull.collect((err, message) => {
-            if(err) console.error(err)
-            // Immediate replies are printed to the console
-            console.info(String(message))
-        })
+        stream
     )
 }
 
@@ -33,4 +28,3 @@ module.exports = {
     handler,
     send
 }
-

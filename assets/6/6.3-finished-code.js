@@ -1,3 +1,5 @@
+const CLEARLINE = '\033[1A'
+
 class Chat {
     constructor(libp2p, topic) {
         this.libp2p = libp2p
@@ -19,9 +21,11 @@ class Chat {
 
     join () {
         this.libp2p.pubsub.subscribe(this.topic, null, (message) => {
-            console.log(String(message.from), String(message.data))
+            const fromMe = this.libp2p.peerInfo.id.toB58String() == message.from;
+            const user = message.from.slice(-5, -1);
+            console.info(`${fromMe ? CLEARLINE : ''}${user}: ${message.data}`)
         }, (err) => {
-            console.log(`Subscribed to ${this.topic}`, err)
+            console.info(`Subscribed to ${this.topic}`, err)
         })
     }
 
@@ -30,6 +34,7 @@ class Chat {
     }
 
     send (message) {
+        message = message.slice(0, -1)
         this.libp2p.pubsub.publish(this.topic, message, (err) => {
             if (err) throw err
         })
@@ -38,3 +43,4 @@ class Chat {
 
 module.exports = Chat
 module.exports.TOPIC = '/libp2p/example/chat/1.0.0'
+
