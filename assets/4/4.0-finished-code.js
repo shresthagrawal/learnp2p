@@ -13,15 +13,20 @@ const Secio = require('libp2p-secio')
 
 const Bootstrap = require('libp2p-bootstrap')
 
-const WebrtcStar = new WStar({ wrtc: Wrtc })
+const transportKey = WStar.prototype[Symbol.toStringTag]
 
 let options = {
     modules: {
-        transport: [ TCP, WS, WebrtcStar ],
+        transport: [ TCP, WS, WStar ],
         connEncryption: [ Secio ],
         peerDiscovery: [ Bootstrap ]
     },
     config: {
+        transport: {
+            [transportKey]: {
+                Wrtc
+            }
+        },
         peerDiscovery: {
             bootstrap: {
                 list: [ '/ip4/127.0.0.1/tcp/63785/ipfs/QmWjz6xb8v9K4KnYEwP5Yk75k5mMBCehzWFLCvvQpYxF3d' ]
