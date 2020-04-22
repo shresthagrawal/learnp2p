@@ -2,6 +2,9 @@ Using the simplest way of Peerdiscovery
 ---------------------------------------
 Bootstrap list for a fixed set of peers.
 
+# Who is this Bootstrap you are talking of?
+# [VISUAL: BOOTSTRAP BILL TURNER (Proposal)]
+As explained in the 
 Try it yourelf.
 * Include, modify config, remove uneccessary. 
 
