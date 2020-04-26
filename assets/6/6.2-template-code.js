@@ -1,9 +1,7 @@
 'use strict'
 const PeerInfo = require('peer-info')
 
-const util = require('util');
-
-const { createLibp2p } = require('libp2p')
+const Libp2p = require('libp2p')
 
 const TCP = require('libp2p-tcp')
 const WS = require('libp2p-websockets')
@@ -19,10 +17,12 @@ const Bootstrap = require('libp2p-bootstrap')
 const MDNS = require('libp2p-mdns')
 const KadDHT = require('libp2p-kad-dht')
 
+// TODO: Include libp2p-gossipsub module
+
 // TODO: change this include pubsub chat class as Pubsubchat
 const Chat = require('./5.0-finished-code.js')
 
-const WebrtcStar = new WStar({ wrtc: Wrtc })
+const transportKey = WStar.prototype[Symbol.toStringTag]
 
 const isBootstrap = process.argv[2] == '--bootstrap' 
 
@@ -34,13 +34,19 @@ const info = {
 
 let options = {
     modules: {
-        transport: [ TCP, WS, WebrtcStar ],
+        transport: [ TCP, WS, WStar ],
         connEncryption: [ Secio ],
         streamMuxer: [ Mplex ],
         peerDiscovery: [ Bootstrap, MDNS ],
         dht: KadDHT
+        // TODO: modify the config to add gossipsub implementation for pubsub
     },
     config: {
+        transport: {
+            [transportKey]: {
+                Wrtc
+            }
+        },
         peerDiscovery: {
             bootstrap: {
                 list: [
@@ -53,8 +59,7 @@ let options = {
                     enabled: true
                 }
             }
-        },
-        // TODO: modify the config to add exprimental pubsub support
+        }
     }
 }
 
@@ -73,15 +78,10 @@ async function sendMessageToAll(message, libp2p) {
 
 
 async function main() {
-    let peerInfo = await util.promisify(PeerInfo.create)(info);
+    let peerInfo = await PeerInfo.create(info);
     if(isBootstrap) options.peerInfo = peerInfo;
     // Create a libp2p instance
-    let libp2p = await util.promisify(createLibp2p)(options)
-
-    libp2p.on('start', () => {
-        console.info(`Libp2p Started`)
-        libp2p.peerInfo.multiaddrs.forEach(ma => console.log(ma.toString()))
-    });
+    let libp2p = await Libp2p.create(options)
 
     libp2p.on('peer:connect', (peerInfo) => {
         console.info(`Connected to ${peerInfo.id.toB58String()}!`)
@@ -104,7 +104,10 @@ async function main() {
     // TODO: modify below to call pubsubChat.sendMessage(message) and bind the object
     process.stdin.on('data', message => sendMessageToAll(String(message), libp2p))
 
+    // TODO: replace with start method of pubsubchar object as it starts a libp2p node internally
     await libp2p.start()
+    console.info(`Libp2p Started`)
+    libp2p.peerInfo.multiaddrs.forEach(ma => console.log(ma.toString()))
 }
 
 main()
