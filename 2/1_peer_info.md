@@ -22,6 +22,7 @@ Once you set up your node, use [`libp2p.multiaddrs`](https://github.com/libp2p/j
 When your node connects to other peers on the network or the status of those connections change, you can set up listeners to react to the [events](https://github.com/libp2p/js-libp2p/blob/master/doc/API.md#events) emitted by your local node.  Common events are [`peer:discovery`](https://github.com/libp2p/js-libp2p/blob/master/doc/API.md#a-peer-has-been-discovered), [`peer:connect`](https://github.com/libp2p/js-libp2p/blob/master/doc/API.md#a-new-connection-to-a-peer-has-been-opened), and [`peer:disconnect`](https://github.com/libp2p/js-libp2p/blob/master/doc/API.md#an-existing-connection-to-a-peer-has-been-closed).  Use the the libp2p event handler like below to react to these events:
 `libp2p.on('peer:discovery', (peer) => console.log(JSON.stringify(peer.toJSON(), null, 2)))`
 
+You can also use the [`libp2p.connections`](https://github.com/libp2p/js-libp2p/blob/master/doc/API.md#connections) to get a list of current connections between your libp2p node and peers.
 * Try it yourself, 
     - Modify the `on(start...` listener to print all multiaddrs associated with your node when the node starts up
     - Add a new listener for the `peer:connect` and print out the PeerId for the `remotePeer` in the body of the listener
