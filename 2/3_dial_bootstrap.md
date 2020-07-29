@@ -1,13 +1,26 @@
-* You can dial to a multiadr using libp2p .dial
-Try it yourlsef
-* init multiadr, dail libp2p (some more description about the apis)
+Connecting to a bootstrap node
+==============================
+
+Now that we understand what a bootstrap node is, let's think about how to connect to one from another node.  To do that, we have to learn about how to create connections between libp2p nodes.  In libp2p, there are two ways to create connections.  You either use the `dial` function to create a generic connection with another node or the `dialProtocol` function to create a connection using a specific protocol (e.g. `/chat/1.0.0`).  For now, we're just going to worry about connecting to other peers so let's use the bootstrap node we created in the last section as a remote peer and dial up a connection.  
+
+The [`dial`](https://github.com/libp2p/js-libp2p/blob/master/doc/API.md#dial) function takes either a `PeerId` or a multiaddress as a parameter and will attempt to create a connection to that peer, something like below.
+`const conn = await libp2p.dial(bootstrapNodeMultiaddr)`
+
+If the connection is created successfully, both nodes will then emit a a `peer:connect` event.
+
+We'll get more into what you do with the [`connection`](https://github.com/libp2p/js-libp2p-interfaces/tree/master/src/connection) object in a future section.
+
+Try it yourself
+===============
+* Start up the bootstrap node created in the last section
+* Copy the node file and then change the port numbers in the `options` object to create a new node
+* Add code to dial the bootstrap node from the second node and see what happens
 
 Try it locally
-* open one terminal and run the bootsrap 
-* and from other term run index, you would see the connect log!
+* Open one terminal and run the bootsrap 
+* Open a second terminal and run your second node. You should see a connection message since both nodes have a listener configured to listen for the `peer:connection` event.
 
-Now you are able to make a connection between the bootstrap and a user. This concludes the chapter. In the next chapter we would try to send and recieve data through the establised connection.
-
+Congrats, now you're able to set up nodes and create connections between them.  In the next chapter, we'll learn how to securely communicate between nodes so others can't listen in on our conversations. 
 <!-- tabs:start -->
 
 #### ** Template **
