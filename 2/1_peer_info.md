@@ -17,12 +17,15 @@ const node = libp2p.create({
 })
 ```
 
-When your node connects to other peers on the network, you can access their public keys and multiaddrs from the `connectionManager` methods and then store them in a `peerStore`, which contains all the connection/protocol data node needs to communicate, including known peers, supported protocols, etc.  All of the peerStore functions can be found here in the [js-libp2p docs](https://github.com/libp2p/js-libp2p/blob/master/doc/API.md#peerstoreaddressbookadd)
+Once you set up your node, use [`libp2p.multiaddrs`](https://github.com/libp2p/js-libp2p/blob/master/doc/API.md#multiaddrs) to retrieve all the multiaddresses that your node is advertising on the network.
+
+When your node connects to other peers on the network or the status of those connections change, you can set up listeners to react to the [events](https://github.com/libp2p/js-libp2p/blob/master/doc/API.md#events) emitted by your local node.  Common events are [`peer:discovery`](https://github.com/libp2p/js-libp2p/blob/master/doc/API.md#a-peer-has-been-discovered), [`peer:connect`](https://github.com/libp2p/js-libp2p/blob/master/doc/API.md#a-new-connection-to-a-peer-has-been-opened), and [`peer:disconnect`](https://github.com/libp2p/js-libp2p/blob/master/doc/API.md#an-existing-connection-to-a-peer-has-been-closed).  Use the the libp2p event handler like below to react to these events:
+`libp2p.on('peer:discovery', (peer) => console.log(JSON.stringify(peer.toJSON(), null, 2)))`
 
 * Try it yourself, 
-    - Modify on start listener such stat it prints all the mutiaddrs
-    - Add a new listener for connection:peer (https://github.com/libp2p/js-libp2p/tree/v0.25.4#libp2ponconnectionstart-peer--) documentation for checking the call back
-    - In the callback of the litener, use the peerinfo and print the peer id in string 
+    - Modify the `on(start...` listener to print all multiaddrs associated with your node when the node starts up
+    - Add a new listener for the `peer:connect` and print out the PeerId for the `remotePeer` in the body of the listener
+    
 * Run it locally, what do you see?
     - List of your connection multiaddrs
 
