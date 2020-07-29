@@ -48,14 +48,13 @@ let options = {
     }
 }
 
-// TODO: add dummy function to send message to all connected nodes
+// TODO: add dummy function to dial connection to newly connected nodes
 
 
 async function main() {
     // Create a libp2p instance
     let libp2p = await Libp2p.create(options)
 
-    // Modify to peer:connect
     libp2p.on('peer:connect', (peerInfo) => {
         console.info(`Connected to ${peerInfo.id.toB58String()}!`)
     })
@@ -63,10 +62,11 @@ async function main() {
     libp2p.peerInfo.multiaddrs.add('/ip4/0.0.0.0/tcp/0')
     libp2p.peerInfo.multiaddrs.add('/ip4/0.0.0.0/tcp/0/ws')
 
+    // TODO: Call the function to dial newly connected nodes
+
     // Handle Message Recieved
     // TODO: add libp2p handler to handle chat protocol
-    // Send Message on User Input
-    // TODO: on user typed message on console call the send message to all dummy function
+    // TODO: Use the chat module receive function to handle an incoming message
 
     await libp2p.start()
     console.info(`Libp2p Started`)

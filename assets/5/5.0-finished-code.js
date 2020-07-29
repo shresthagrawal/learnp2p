@@ -5,8 +5,6 @@ const pipe = require('it-pipe')
 const PROTOCOL = '/libp2p/chat/1.0.0'
 
 function send(stream) {
-  // Read utf-8 from stdin
-  process.stdin.setEncoding('utf8')
   pipe(
     // Read from stdin (the source)
     process.stdin,

@@ -60,10 +60,9 @@ let options = {
 }
 
 async function sendMessageToAll(message, libp2p) {
-    // TODO: remove the endline (last char) from the message
-    // TODO: get the list of all peers from the libp2p.peerBook
-    // TODO: for each peer check if it connected and excepts the chat protocol
-    // TODO: for every such peer dial and send message using our Chat.send() function
+    // TODO: Identify a new peer added event by using libp2p.peerStore.on('peer')
+    // TODO: dial connection to the newly added peer
+    // TODO: use the send function  of chat module to send message written to console on the stream
 }
 
 
@@ -85,10 +84,12 @@ async function main() {
         libp2p.peerInfo.multiaddrs.add('/ip4/0.0.0.0/tcp/0/ws')
     }
 
+    dialPeers(libp2p)
+
     // Handle Message Recieved
-    libp2p.handle(Chat.PROTOCOL, Chat.handler)
-    // Send Message on User Input
-    process.stdin.on('data', message => sendMessageToAll(String(message), libp2p))
+    await libp2p.handle(Chat.PROTOCOL, async ({ stream }) => {
+        Chat.receive(stream)
+    })
 
     await libp2p.start()
     console.info(`Libp2p Started`)

@@ -61,7 +61,6 @@ let options = {
 
 async function dialPeers(libp2p) {
     libp2p.peerStore.on('peer', async (peerInfo) => {
-        console.log(peerInfo.protocols)
         const { stream } = await libp2p.dialProtocol(peerInfo, Chat.PROTOCOL)
         Chat.send(stream)
     })

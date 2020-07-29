@@ -48,7 +48,7 @@ let options = {
     }
 }
 
-async function sendMessageToAll(message, libp2p) {
+async function dialPeers(message, libp2p) {
 }
 
 
@@ -63,13 +63,12 @@ async function main() {
     libp2p.peerInfo.multiaddrs.add('/ip4/0.0.0.0/tcp/0')
     libp2p.peerInfo.multiaddrs.add('/ip4/0.0.0.0/tcp/0/ws')
 
+    dialPeers(libp2p)
+
     // Handle Message Recieved
     await libp2p.handle(Chat.PROTOCOL, async ({ stream }) => {
-        Chat.stdinToStream(stream)
-        Chat.streamToConsole(stream)
+        Chat.receive(stream)
     })
-    // Send Message on User Input
-    // process.stdin.on('data', message => sendMessageToAll(String(message), libp2p))
 
     await libp2p.start()
     console.info(`Libp2p Started`)
