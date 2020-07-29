@@ -59,7 +59,7 @@ let options = {
     }
 }
 
-async function sendMessageToAll(message, libp2p) {
+async function dialPeers(libp2p) {
     // TODO: Identify a new peer added event by using libp2p.peerStore.on('peer')
     // TODO: dial connection to the newly added peer
     // TODO: use the send function  of chat module to send message written to console on the stream
