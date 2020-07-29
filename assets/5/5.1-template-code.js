@@ -9,7 +9,7 @@ const Wrtc = require('wrtc')
 
 const multiaddr = require('multiaddr')
 
-const Mplex = require('pull-mplex')
+const Mplex = require('libp2p-mplex')
 const Secio = require('libp2p-secio')
 
 const Bootstrap = require('libp2p-bootstrap')

@@ -10,7 +10,7 @@ const Wrtc = require('wrtc')
 
 const multiaddr = require('multiaddr')
 
-const Mplex = require('pull-mplex')
+const Mplex = require('libp2p-mplex')
 const Secio = require('libp2p-secio')
 
 const Bootstrap = require('libp2p-bootstrap')
@@ -59,15 +59,11 @@ let options = {
     }
 }
 
-async function sendMessageToAll(message, libp2p) {
-    message = message.slice(0, -1)
-    let peers = libp2p.peerBook.getAllArray()
-    peers.forEach(async (peerInfo) => {
-        if(!peerInfo.isConnected() || !peerInfo.protocols.has(Chat.PROTOCOL)) return
-        libp2p.dialProtocol(peerInfo, Chat.PROTOCOL, (err, stream) => {
-            if (err) return console.error('Could not negotiate chat protocol stream with peer', err)
-            Chat.send(message, stream)
-        })
+async function dialPeers(libp2p) {
+    libp2p.peerStore.on('peer', async (peerInfo) => {
+        console.log(peerInfo.protocols)
+        const { stream } = await libp2p.dialProtocol(peerInfo, Chat.PROTOCOL)
+        Chat.send(stream)
     })
 }
 
@@ -90,10 +86,12 @@ async function main() {
         libp2p.peerInfo.multiaddrs.add('/ip4/0.0.0.0/tcp/0/ws')
     }
 
+    dialPeers(libp2p)
+
     // Handle Message Recieved
-    libp2p.handle(Chat.PROTOCOL, Chat.handler)
-    // Send Message on User Input
-    process.stdin.on('data', message => sendMessageToAll(String(message), libp2p))
+    await libp2p.handle(Chat.PROTOCOL, async ({ stream }) => {
+        Chat.receive(stream)
+    })
 
     await libp2p.start()
     console.info(`Libp2p Started`)

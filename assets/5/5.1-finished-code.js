@@ -9,14 +9,14 @@ const Wrtc = require('wrtc')
 
 const multiaddr = require('multiaddr')
 
-const Mplex = require('pull-mplex')
+const Mplex = require('libp2p-mplex')
 const Secio = require('libp2p-secio')
 
 const Bootstrap = require('libp2p-bootstrap')
 const MDNS = require('libp2p-mdns')
 const KadDHT = require('libp2p-kad-dht')
 
-const ChatProtocol = require('./5.0-finished-code')
+const Chat = require('./5.0-finished-code')
 
 const transportKey = WStar.prototype[Symbol.toStringTag]
 
@@ -64,9 +64,12 @@ async function main() {
     libp2p.peerInfo.multiaddrs.add('/ip4/0.0.0.0/tcp/0/ws')
 
     // Handle Message Recieved
-    libp2p.handle(ChatProtocol.PROTOCOL, ChatProtocol.handler)
+    await libp2p.handle(Chat.PROTOCOL, async ({ stream }) => {
+        Chat.stdinToStream(stream)
+        Chat.streamToConsole(stream)
+    })
     // Send Message on User Input
-    process.stdin.on('data', message => sendMessageToAll(String(message), libp2p))
+    // process.stdin.on('data', message => sendMessageToAll(String(message), libp2p))
 
     await libp2p.start()
     console.info(`Libp2p Started`)
