@@ -13,7 +13,7 @@ Now, you can take this address and provide it to all the peer nodes you want to 
 
 Try it yourself
 ---------------
-* Include the `multiaddr` library in your code
+* Install the correct version of the multiaddr library: "^6.1.0" or above
 * Add the multiaddrs for tcp and ws for your local node
 
 <!-- tabs:start -->
