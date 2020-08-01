@@ -6,9 +6,11 @@ const TCP = require('libp2p-tcp')
 const WS = require('libp2p-websockets')
 const WStar = require('libp2p-webrtc-star')
 const Wrtc = require('wrtc')
+// require  libp2p/src/insecure/plaintext module
 
 const transportKey = WStar.prototype[Symbol.toStringTag]
 
+// TODO: modify options to include `connEncryption` and use Plaintext
 let options = {
     modules: {
         transport: [ TCP, WS, WStar ]

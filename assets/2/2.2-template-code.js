@@ -6,6 +6,7 @@ const TCP = require('libp2p-tcp')
 const WS = require('libp2p-websockets')
 const WStar = require('libp2p-webrtc-star')
 const Wrtc = require('wrtc')
+const Plaintext = require('libp2p/src/insecure/plaintext')
 
 const multiaddr = require('multiaddr')
 
@@ -22,7 +23,8 @@ const transportKey = WStar.prototype[Symbol.toStringTag]
 
 let options = {
     modules: {
-        transport: [ TCP, WS, WStar ]
+        transport: [ TCP, WS, WStar ],
+        connEncryption: [ Plaintext ]
     },
     config: {
         transport: {

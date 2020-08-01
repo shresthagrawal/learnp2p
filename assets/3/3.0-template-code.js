@@ -6,17 +6,17 @@ const TCP = require('libp2p-tcp')
 const WS = require('libp2p-websockets')
 const WStar = require('libp2p-webrtc-star')
 const Wrtc = require('wrtc')
+const Plaintext = require('libp2p/src/insecure/plaintext') // TODO: replace plaintext with `libp2p-secio`
 
 const multiaddr = require('multiaddr')
 
-// TODO: require `libp2p-secio`
-
 const WebrtcStar = new WStar({ wrtc: Wrtc })
 
-// TODO: modify options to include `connEncryption` and use Secio
+// TODO: modify options to replace plaintext in `connEncryption` to Secio
 let options = {
     modules: {
-        transport: [ TCP, WS, WStar ]
+        transport: [ TCP, WS, WStar ],
+        connEncryption: [ Plaintext ]
     },
     config: {
         transport: {
