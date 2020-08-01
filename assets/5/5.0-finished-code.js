@@ -1,30 +1,35 @@
 'use-strict'
 
-const pull = require('pull-stream')
+const pipe = require('it-pipe')
 
 const PROTOCOL = '/libp2p/chat/1.0.0'
 
-function handler (protocol, stream) {
-    pull (
-        stream,
-        pull.collect((err, message) => {
-            if(err) throw console.error(err)
-            console.info(String(message))
-            // Close the stream immediately
-            pull(pull.empty(), stream)
-        })
-    )
+function send(stream) {
+  pipe(
+    // Read from stdin (the source)
+    process.stdin,
+    // Write to the stream (the sink)
+    stream.sink
+  )
 }
 
-function send (message, stream) {
-    pull (
-        pull.values([ message ]),
-        stream
-    )
+function receive(stream) {
+  pipe(
+    // Read from the stream (the source)
+    stream.source,
+    // Sink function
+    async function (source) {
+      // For each chunk of data
+      for await (const msg of source) {
+        // Output the data as a utf8 string
+        console.log('> ' + msg.toString('utf8').replace('\n', ''))
+      }
+    }
+  )
 }
 
 module.exports = {
-    PROTOCOL,
-    handler,
-    send
+  send,
+  receive,
+  PROTOCOL
 }
