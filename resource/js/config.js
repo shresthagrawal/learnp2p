@@ -56,9 +56,6 @@ var klaroConfig = {
         description:
           'We use necessary cookies to make our site work. We\'d also like to set optional tracking mechanisms to help us improve it by collecting and reporting information on how you use it. Here you can customize the information we collect about you by giving or revoking your consent to our use of optional tracking mechanisms.',
       },
-      googleAnalytics: {
-        description: 'Collection of information about how visitors use our website',
-      },
       cloudflare: {
         description: 'Protection against DDoS attacks',
       },
