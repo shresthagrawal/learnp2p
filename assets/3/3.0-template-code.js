@@ -10,6 +10,8 @@ const Plaintext = require('libp2p/src/insecure/plaintext') // TODO: replace plai
 
 const multiaddr = require('multiaddr')
 
+// TODO: require `libp2p-noise`
+
 const WebrtcStar = new WStar({ wrtc: Wrtc })
 
 // TODO: modify options to replace plaintext in `connEncryption` to noise
