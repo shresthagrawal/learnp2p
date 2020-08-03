@@ -17,9 +17,9 @@
     + [Create Bootstrap](2/2_create_bootstrap.md)
     + [Dial Bootstrap](2/3_dial_bootstrap.md)
 
-- [**#3 Secure Connection & Secio**](3/introduction.md)
-    + [Secio](3/0_secio_node.md)
-    + [Add Secio to Bootstrap](3/1_secio_bootstrap.md)
+- [**#3 Secure Connection**](3/introduction.md)
+    + [Encrypted Channels](3/0_encrypted_node.md)
+    + [Secure your Bootstrap!](3/1_encrypted_bootstrap.md)
 
 - [**#4 Peer Discovery**](4/introduction.md)
     + [Bootstrap](4/0_bootstrap.md)

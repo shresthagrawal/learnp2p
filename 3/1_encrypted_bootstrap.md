@@ -1,3 +1,5 @@
+Secure your bootstrap!
+======================
 Now it's time to make the same changes to your bootstrap node.
 
 Try it yourself
