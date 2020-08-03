@@ -7,7 +7,10 @@ Make sure to add the Javascript implementation of `noise` to your code before
 Try it yourself
 ===============
 - Install secio `npm i libp2p-noise`
-- `Require` noise
+- `Require` noise - warning here: The `noise` object you need for the `option` configuration object is a named export from `libp2p-noise` so make sure you require it like 
+```javascript
+const { NOISE } = require('libp2p-noise')
+```
 - Update the `options` in your node configuration as below
 ```javascript
 new Libp2p({
@@ -19,7 +22,7 @@ new Libp2p({
 - Try running the bootstrap node created in 2.2 and then connect this node to it
 - What error do you see?  
 
-The error you're seeing here - `Error: "/noise/1.0.0" not supported` - is that your bootstrap node isn't configured to support `noise` so the node dialing into your bootstrap can't connect.  In libp2p, nodes have to match on protocol and supported transport/encryption modules to be able to communicate.  
+The error you're seeing here - `Error: Protocol Selection Failed` - is that your bootstrap node isn't configured to support `noise` so the node dialing into your bootstrap can't connect.  In libp2p, nodes have to match on protocol and supported transport/encryption modules to be able to communicate.  
 
 In the next section, we'll resolve this issue and finally have the secured communication we've been hoping for.
 <!-- tabs:start -->

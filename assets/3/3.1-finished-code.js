@@ -10,7 +10,7 @@ const Wrtc = require('wrtc')
 
 const multiaddr = require('multiaddr')
 
-const Secio = require('libp2p-secio')
+const { NOISE } = require('libp2p-noise')
 
 const PeerInfo = require('peer-info')
 
@@ -24,8 +24,15 @@ const info = {
 
 let options = {
     modules: {
-        transport: [ TCP, WS, WebrtcStar ],
-        connEncryption: [ Secio ]
+        transport: [ TCP, WS, WStar ],
+        connEncryption: [ NOISE ]
+    },
+    config: {
+        transport: {
+            [transportKey]: {
+                Wrtc
+            }
+        }
     }
 }
 

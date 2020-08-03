@@ -10,23 +10,28 @@ const Wrtc = require('wrtc')
 
 const multiaddr = require('multiaddr')
 
-const Secio = require('libp2p-secio')
+const { NOISE } = require('libp2p-noise')
 
 const WebrtcStar = new WStar({ wrtc: Wrtc })
 
 let options = {
     modules: {
-        transport: [ TCP, WS, WebrtcStar ],
-        connEncryption: [ Secio ]
+        transport: [ TCP, WS, WStar ],
+        connEncryption: [ NOISE ]
+    },
+    config: {
+        transport: {
+            [transportKey]: {
+                Wrtc
+            }
+        }
     }
 }
 
 const bootstrapAddress = multiaddr('/ip4/0.0.0.0/tcp/63785/ipfs/QmWjz6xb8v9K4KnYEwP5Yk75k5mMBCehzWFLCvvQpYxF3d');
 
 async function onStart(libp2p) {
-    libp2p.dial(bootstrapAddress, (err) => {
-        if (err) return console.error(err)
-    })
+    await libp2p.dial(bootstrapAddress)
 }
 
 async function main() {
