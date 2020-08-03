@@ -9,7 +9,7 @@ const Wrtc = require('wrtc')
 
 const multiaddr = require('multiaddr')
 
-// TODO: require `libp2p-secio`
+// TODO: require `libp2p-noise`
 
 const PeerInfo = require('peer-info')
 
@@ -21,7 +21,7 @@ const info = {
   "pubKey": "CAASpgIwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDKNKwPX4DJhYdGreAVaJy+efhIfbyczR0Mfyi/JfzszY9INH83Veo2s/yOKv+YOP4y7OWpkXL5G6K8fLgxwq5gtTc78W07uz5ZUrxfOT0R4QJuiiQHjQSxYKw08yLIP9JaR2ztL46DOO/Nvzl9gCWHGsAb+w+RLWa0R0SRyvaDiw8aZW9G70yYTGF/SPkEoYN26sioVDwppmKxZ9mTuKsujG0AGAMVPnmjhDI5WmBD3gnOiqCECqlgxl29Qlc1fCIbojcUVE9eWFWassFLicGdo/iMacsVvoTav9JvHZsMvg1HXeK0khQWluCUfdcR6coijDMDWBa77dTI6+b2ybZXAgMBAAE="
 }
 
-// TODO: modify options to include `connEncryption` and use Secio
+// TODO: modify options to include `connEncryption` and use noise
 let options = {
     modules: {
         transport: [ TCP, WS, WStar ]
