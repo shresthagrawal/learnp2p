@@ -2,8 +2,6 @@ class Chat {
     constructor(libp2p, topic) {
         // TODO: declare this.libp2p
         // TODO: declare this.topic
-        // TODO: make libp2p on start call onStart function
-        // TODO: make libp2p on stop call onStop function
 
         // Join if libp2p is already on
         // TODO: check if libp2p is already started if so, call onStart
