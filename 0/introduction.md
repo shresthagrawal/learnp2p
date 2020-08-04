@@ -32,5 +32,5 @@ The repository of libp2p is continuously changing, which means that there can ar
 
 - The master branch might contain changes in the documentation that is not yet released. It is recommended to check the latest documentation at [npm documentation](https://www.npmjs.com/package/libp2p) of js-libp2p.
 
-> This tutorial uses js-libp2p v0.25.4 where as the latest is v0.27.3.
-> In future, the tutorial would switch to the latest versions.
+> This tutorial uses js-libp2p v0.27.6. Please go to the official
+> [website](https://docs.libp2p.io) to see the latest version.
