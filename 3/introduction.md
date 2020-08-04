@@ -1,4 +1,4 @@
-##Secure Communication
+## Secure Communication
 
 As has been noted several times throughout this tutorial, libp2p is a modular network stack and one of the module types available for libp2p is the [connection encryption](https://github.com/libp2p/js-libp2p/blob/master/doc/CONFIGURATION.md#connection-encryption) module type, which is set using the `connEncryption` option when configuring a node.  As the name suggests, this module deals with how data that is sent between two nodes is encrypted using asymmetric encryption.  
 
