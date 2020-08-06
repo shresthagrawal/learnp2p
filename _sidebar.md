@@ -25,6 +25,8 @@
     + [Bootstrap](4/0_bootstrap.md)
     + [MDns](4/1_mdns.md)
     + [DHT](4/2_dht.md)
+    + [DHTs in General](4/3_dht_general.md)
+    + [Kademlia](4/4_kademlia.md)
 
 - [**#5 Mplex and Chat Protocol**](5/introduction.md)
     + [Create Chat Protocol](5/0_create_protocol.md)
