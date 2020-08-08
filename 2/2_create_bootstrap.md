@@ -7,7 +7,7 @@ By default, libp2p nodes generate new `PeerIds` and addresses every time they st
 ```javascript
 const node = libp2p.create({
     addresses: {
-        listen: ['/ip4/127.0.0.1/tcp/63685', '/ip4/127.0.0.1/tcp/63786/ws]
+        listen: ['/ip4/127.0.0.1/tcp/63685', '/ip4/127.0.0.1/tcp/63786/ws']
     },
     peerId: {
         "id": "Qma3GsJmB47xYuyahPZPSadh1avvxfyYQwk8R3UnFrQ6aP",
@@ -42,4 +42,3 @@ Try it yourself
 [embedded-code-previous](../assets/2/2.1-finished-code.js ':include :type=code embed-previous')
 
 <!-- tabs:end -->
-
