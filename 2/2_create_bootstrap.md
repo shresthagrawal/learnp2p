@@ -22,6 +22,7 @@ This configuration sets up a node with two fixed multiaddresses, one for tcp tra
 Try it yourself
 ===============
  
+* Create a copy of `index.js` to `bootstrap.js` and perform the below step on the `bootstrap.js` code.
 * Add a fixed address to the node `options` object
 * Change the ports from '0'(which defaults to a best available/open port) to a specific port.
 * Run it Locally, what do you see?
