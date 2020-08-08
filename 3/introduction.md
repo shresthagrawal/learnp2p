@@ -1,7 +1,7 @@
 Secure Connection
 ==============
 
-As has been noted several times throughout this tutorial, libp2p is a modular network stack and one of the module types available for libp2p is the [connection encryption](https://github.com/libp2p/js-libp2p/blob/master/doc/CONFIGURATION.md#connection-encryption) module type, which is set using the `connEncryption` option when configuring a node.  As the name suggests, this module deals with how data that is sent between two nodes is encrypted using asymmetric encryption.  
+Libp2p has [connection encryption](https://github.com/libp2p/js-libp2p/blob/master/doc/CONFIGURATION.md#connection-encryption) interface to easily plug use any encryption method.  This can be configured by setting the `connEncryption` in node options.  This will make sure every transport message is encrypted using the provide method.   
 
 Several of the transport modules that libp2p supports do not have native encryption so data would be sent in plain text between nodes.  At the moment, our chat application is configured this way and sends data as plain text which is exactly what it sounds like. I don't think anyone would like to use a chat system where everyone can read everyone's message. 
 
