@@ -1,16 +1,15 @@
 Defining our pubsub implementation
 ==================================
 
-To simplify our pubsub integration for the chat app, we're going to define a class that abstracts the libp2p implementation details of our chat app into the basic functions necessary for starting/stopping the chat app and then joining, leaving, and sending messages to a group within the app.
-
-Then, let's also define a constant `pubsub.topic = '/chat/1.0.0'`.  When we get integrate the pubsub class into our node, we're going to move the chat functions out of a libp2p custom protocol and make it the topic that our nodes subscribe to using pubsub.
+To simplify our pubsub integration for the chat app, we're going to define a class that abstracts the implementation details of pubsub module into simple operations like join, leave, etc.  Once we implement pubsub we will replace our custom protocol with the custom chat topic `/chat/1.0.0` that all nodes will connect to join the group chat. 
 
 ### Try it yourself
- * Define a class with a constructor that takes a libp2p node and a topic and then starts the node if it's not already active
- * Add class functions for `start`, `stop`, `join`, `leave`, and `send`
+ * Create a new file named `chat.js` 
+ * Define a class `Chat` with a constructor that takes a libp2p node and a topic and then starts the node if it's not already active
+ * Add dummy class functions for `start`, `stop`, `join`, `leave`, and `send`
     - Hint, make sure these functions are asynchronous since this is peer to peer and things don't always happen as quickly as we like. 
  * Make the class the default export 
- * Create a named export `TOPIC` that is defined as a constant that references the current chat protocol name `/chat/1.0.0`
+ * Create a const export `TOPIC` and initialise it with the chat topic (`/chat/1.0.0`)
 
 <!-- tabs:start -->
 
