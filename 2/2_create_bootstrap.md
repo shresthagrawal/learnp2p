@@ -26,7 +26,7 @@ Try it yourself
 * Add a fixed address to the node `options` object
 * Change the ports from '0'(which defaults to a best available/open port) to a specific port.
 * Run it Locally, what do you see?
-  - Do you see ports and address specified? 
+* Do you see ports and address specified? 
 
 <!-- tabs:start -->
 
