@@ -5,7 +5,7 @@ We talked a lot about how awesome libp2p is as a modular and future-proof networ
 
 Try it yourself
 ---------------
-* Install the correct version of the multiaddr library: "^6.1.0" or above
+* Install the correct version of the multiaddr library: `^6.1.0` or above
 * Add the TCP transport module to your local node's configuration and start up the node
 * Look at the multiaddress that is printed out and verify it's TCP
 * Now, let's pretend its [2011](https://en.wikipedia.org/wiki/WebSocket) and the amazing new websocket protocol has just been introduced.  And, awesomely enough, libp2p happens to have had a websocket module ready at the same time!  Add `ws` to the `transport` section of your node's configuration options and start it up.
