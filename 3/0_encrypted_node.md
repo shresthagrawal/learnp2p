@@ -2,7 +2,6 @@
 
 Now that we understand how libp2p secures communication between nodes, let's get down to business.  Our node currently sends data in plain text over the wire so anyone can listen in.  As mentioned previously, libp2p offers two encryption modules out of the box, `secio` and `noise`.  It's beyond the scope of this tutorial to go into all the [nuances of each and which to pick](https://forum.web3.foundation/t/transport-layer-authentication-libp2ps-secio/69), but we're going to use `noise`, since `secio` is in the process of being deprecated as of the time of this writing. 
 
-Make sure to add the Javascript implementation of `noise` to your code before 
 
 Try it yourself
 ===============

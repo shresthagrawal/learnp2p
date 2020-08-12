@@ -4,7 +4,7 @@ Now it's time to make the same changes to your bootstrap node.
 
 Try it yourself
 ===============
- * Require noise in your bootstrap node and add `noise` to the `connEncryption` section of the configuration options for the bootstrap node.
+ * Make the exact same change that you made in your `index.js` into `bootstrap.js` to add `noise` as encryption in bootstrap node 
  * Run the bootstrap and then dial it from the other node
  * You should now have a secure channel to communicate over!
 
