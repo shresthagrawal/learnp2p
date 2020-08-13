@@ -6,13 +6,15 @@ const TCP = require('libp2p-tcp')
 const WS = require('libp2p-websockets')
 const WStar = require('libp2p-webrtc-star')
 const Wrtc = require('wrtc')
-const Plaintext = require('libp2p/src/insecure/plaintext') // TODO: replace plaintext with `libp2p-secio`
+const Plaintext = require('libp2p/src/insecure/plaintext') // TODO: replace plaintext with `libp2p-noise`
 
 const multiaddr = require('multiaddr')
 
+// TODO: require `libp2p-noise`
+
 const WebrtcStar = new WStar({ wrtc: Wrtc })
 
-// TODO: modify options to replace plaintext in `connEncryption` to Secio
+// TODO: modify options to replace plaintext in `connEncryption` to noise
 let options = {
     modules: {
         transport: [ TCP, WS, WStar ],
