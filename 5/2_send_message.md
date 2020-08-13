@@ -1,6 +1,3 @@
-Fill in the function send message to all
-* How to send messages between each other
-
 At the end of this section, we will have a functional chat application. It should be possible to create multiple nodes and chat with connected nodes.
 
 Libp2p's peerstore emits an event when a new peer is connected. We subscribe to this event and establish a connection with the peer thus creating the stream object which can be used to send messages to the peer by using the chat protocol's `Send` method.

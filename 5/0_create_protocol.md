@@ -1,13 +1,3 @@
-* Explain Pull stream, concept of source, sink.. 
-* Stream iterables
-* Try it yourself
-    - Add hanler.. 
-* Explain async iterator & streams
-* Define the protocol
-* Do it yourself
-    - Install pull-mplex
-    - modify the config accordingly
-
 In this section, let us start with writing a chat protocol which consumes  the data which  is  typed on your screen and sends  it to the connected peers and which also reads the data sent by connected peers and prints it on the screen.
 
 When connected to a peer, the connection creates a duplex stream with the peer from which you can read data sent by  peer or write data to the peer. Let us unpack the previous statement starting with understanding what streams are. Streams are a fundamental concept in Nodejs which help deal with information exchange like files, network communications etc. Streams are interesting is because they let us deal with large amount of data without actually loading all the data in memory, as the streams process smaller chunks of data. There are multiple types of streams like Readable, Writable, Duplex and Transform. Readable streams let us read data. Writeable streams let us write data. Duplex stream allow us to wrote as well as read data. Transform streams are modify the data before as it is being read or  written. Libp2p provides us  with a duplex stream when a connection is established which allows us to exchange data with the peer. Duplex stream has a source where the data received from the connection is available and a sink the object to which data has to be written to send the data to the other side of the connection(i.e peers).
