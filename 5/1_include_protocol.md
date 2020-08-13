@@ -1,6 +1,3 @@
-Add chat protocol to the main code
-include protocol in a node
-
 In this section, we add support for multiplexing and integrate the chat protocol we created in the previous section with the connections created by libp2p.
 
 # Try it yourself
