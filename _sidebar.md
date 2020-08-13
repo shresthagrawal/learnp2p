@@ -12,7 +12,7 @@
     + [Start Libp2p](1/3_start_libp2p.md)
 
 - [**#2 Multiadrs & Bootstrap**](2/introduction.md)
-    + [Future proof Libp2p](2/0_insight_futureproof.md)
+    + [DIY future-proofing](2/0_DIY_future_proofing.md)
     + [Peer Info](2/1_peer_info.md)
     + [Create Bootstrap](2/2_create_bootstrap.md)
     + [Dial Bootstrap](2/3_dial_bootstrap.md)

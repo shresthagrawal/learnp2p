@@ -7,7 +7,7 @@ By default, libp2p nodes generate new `PeerIds` and addresses every time they st
 ```javascript
 const node = libp2p.create({
     addresses: {
-        listen: ['/ip4/127.0.0.1/tcp/63685', '/ip4/127.0.0.1/tcp/63786/ws]
+        listen: ['/ip4/127.0.0.1/tcp/63685', '/ip4/127.0.0.1/tcp/63786/ws']
     },
     peerId: {
         "id": "Qma3GsJmB47xYuyahPZPSadh1avvxfyYQwk8R3UnFrQ6aP",
@@ -22,10 +22,11 @@ This configuration sets up a node with two fixed multiaddresses, one for tcp tra
 Try it yourself
 ===============
  
+* Create a copy of `index.js` to `bootstrap.js` and perform the below step on the `bootstrap.js` code.
 * Add a fixed address to the node `options` object
 * Change the ports from '0'(which defaults to a best available/open port) to a specific port.
 * Run it Locally, what do you see?
-  - Do you see ports and address specified? 
+* Do you see ports and address specified? 
 
 <!-- tabs:start -->
 
@@ -42,4 +43,3 @@ Try it yourself
 [embedded-code-previous](../assets/2/2.1-finished-code.js ':include :type=code embed-previous')
 
 <!-- tabs:end -->
-
