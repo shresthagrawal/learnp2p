@@ -6,10 +6,9 @@
     + [Project Setup](0/project_setup.md)
 
 - [**#1 Transports**](1/introduction.md)
-    + [Modularity of Libp2p](1/0_insight_modular.md)
-    + [Create Libp2p Node](1/1_create_libp2p_node.md)
-    + [Add Transports](1/2_add_transport.md)
-    + [Start Libp2p](1/3_start_libp2p.md)
+    + [Create Libp2p Node](1/0_create_libp2p_node.md)
+    + [Add Transports](1/1_add_transport.md)
+    + [Start Libp2p](1/2_start_libp2p.md)
 
 - [**#2 Multiadrs & Bootstrap**](2/introduction.md)
     + [DIY future-proofing](2/0_DIY_future_proofing.md)
