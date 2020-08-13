@@ -9,7 +9,7 @@ const Wrtc = require('wrtc')
 
 const multiaddr = require('multiaddr')
 
-const Mplex = require('libp2p-mplex')
+// TODO: require `libp2p-mplex`
 const Secio = require('libp2p-secio')
 
 const Bootstrap = require('libp2p-bootstrap')
@@ -24,7 +24,7 @@ let options = {
     modules: {
         transport: [ TCP, WS, WStar ],
         connEncryption: [ Secio ],
-        streamMuxer: [ Mplex ],
+        // TODO: Add libp2p-mplex as the stream Multiplexer
         peerDiscovery: [ Bootstrap, MDNS ],
         dht: KadDHT
     },
