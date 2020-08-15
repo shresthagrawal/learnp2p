@@ -47,9 +47,13 @@ This way of networking wouldn't be complete if nodes wouldn't be able to exchang
 
 ### Getting our implementation up and running
 
-If you would like to learn more information about DHTs and Kademlia's implementation, you can check out the following subchapters, [DHTs in General](4/3_dht_general.md) and [Kademlia](4/kademlia.md), otherwise it is time to work on adding our new module.
+If you would like to learn more about DHTs and Kademlia's implementation, you can check out the following subchapters, [DHTs in General](4/3_dht_general.md) and [Kademlia](4/kademlia.md), otherwise it is time to work on adding our new module.
 
-Try it yourself.
+First, the `libp2p-kad-dht` module has to be loaded by requiring it. Next, in order to properly use this implementation, it has to be added to the modules `dht` entry as the module of our choice and it must be configured.
+
+For the configuration of the `dht` module we have chosen, there are many options that can be set, including even the size of the lists (also known as buckets) used in locating the peers each node knows. We will set `enabled` option for the `dht` to `true` and `randomwalk`, which is a discovery service of peers in the network, with its own `enabled` option to be `true`. 
+
+Now hopefully we have set it up correctly and the nodes in our network will automatically start reaching out to other nodes and exchanging information.
 
 <!-- tabs:start -->
 
