@@ -47,7 +47,7 @@ This way of networking wouldn't be complete if nodes wouldn't be able to exchang
 
 ### Getting our implementation up and running
 
-If you would like to learn more about DHTs and Kademlia's implementation, you can check out the following subchapters, [DHTs in General](4/3_dht_general.md) and [Kademlia](4/kademlia.md), otherwise it is time to work on adding our new module.
+If you would like to learn more about DHTs and Kademlia's implementation, you can check out the following subchapters, [DHTs in General](4/2_dht_general.md) and [Kademlia](4/3_kademlia.md), otherwise it is time to work on adding our new module.
 
 First, the `libp2p-kad-dht` module has to be loaded by requiring it. Next, in order to properly use this implementation, it has to be added to the modules `dht` entry as the module of our choice and it must be configured.
 
