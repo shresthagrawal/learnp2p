@@ -31,6 +31,8 @@ async function main() {
 
     await libp2p.start();
     console.info(`Libp2p Started`)
+    
+    libp2p.peerInfo.multiaddrs.forEach(ma => console.log(ma.toString()))
 }
 
 main()

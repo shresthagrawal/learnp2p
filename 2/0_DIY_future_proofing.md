@@ -6,10 +6,15 @@ We talked a lot about how awesome libp2p is as a modular and future-proof networ
 Try it yourself
 ---------------
 * Install the correct version of the multiaddr library: `^6.1.0` or above
-* Add the TCP transport module to your local node's configuration and start up the node
-* Look at the multiaddress that is printed out and verify it's TCP
-* Now, let's pretend its [2011](https://en.wikipedia.org/wiki/WebSocket) and the amazing new websocket protocol has just been introduced.  And, awesomely enough, libp2p happens to have had a websocket module ready at the same time!  Add `ws` to the `transport` section of your node's configuration options and start it up.
-* Do you see a new multiaddress with `ws` in it?  If so, congratulations, you have just demonstrated future-proofing and modularity in 1 line of code!
+* Add ('/ip4/0.0.0.0/tcp/0') tcp and ('/ip4/0.0.0.0/tcp/0/ws') websocket multi address to the nodes. 
+> Note that using 0 as port automatically takes any available port 
+* Console log all the multiaddress associated to the node
+* Run the code, do you see a multiaddress with `tcp` and `ws` ?  If so, congratulations, you have just demonstrated future-proofing and modularity!
+
+Hints
+-----
+* `libp2p.peerInfo.multiaddrs()` gives the list of all the multiaddress associated to the `libp2p` node
+* `libp2p.peerInfo.multiaddrs.add(addressString)` can be used to add `multiaddress` 
 
 <!-- tabs:start -->
 
