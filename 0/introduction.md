@@ -1,6 +1,6 @@
 # What is libp2p?
 
-> Good question! The one-liner pitch for libp2p is - 'libp2p is a modular system of protocols, specifications and libraries that enable the development of peer-to-peer network applications'.
+> Good question! The one-liner pitch is - 'libp2p is a modular system of protocols, specifications and libraries that enable the development of peer-to-peer network applications.'
 
 ![Explain me like I'm five](./assets/explain-me.gif)
 
@@ -8,15 +8,9 @@ In easy words, let's suppose you are at a hardware store and you want to buy som
 
 ![Wrenches](./assets/wrenches.jpg)
 
-For most of us, we only want a few sizes of wrenches. So, we pick only the ones that we want.
+For most of us, we only want a few sizes of wrenches. So, we pick only the ones that we want. Similarly, when we build a networking stack (toolbox) for our application, we only need a few protocols & modules (wrenches). So, we should be able to select what protocols and modules we want to use and use them independently.
 
-Similarly, when we build a networking stack (toolbox) for our application, we only need a few protocols & modules (wrenches). So, we should be able to select what protocols and modules we want to use and use them independently.
-
-Libp2p allows you to do the same for networking, as the hardware store does for the hardware tools, i.e. allowing you to select and use only the tools (protocols & modules) that you want to use.
-
-Now, as everyone needs a different set of wrenches, similarly, every application needs a different set or **bundle** of protocols & modules.
-
-The best way to understand & learn libp2p is to just understand what its each of its module does (which we would learn in more depth in the following chapters).
+Libp2p allows you to do the same for networking, as the hardware store does for the hardware tools, i.e. allowing you to select and use only the tools (protocols & modules) that you want to use. Now, as everyone needs a different set of wrenches, similarly, every application needs a different set or **bundle** of protocols & modules.The best way to understand & learn libp2p is to just understand what its each of its module does (which we would learn in more depth in the following chapters).
 
 Though the above definition is enough, the resource that can answer this question in much more depth is ["What is libp2p?"](https://simpleaswater.com/what-is-libp2p/) by ["Simple As Water"](https://simpleaswater.com/)
 

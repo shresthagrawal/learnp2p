@@ -29,6 +29,20 @@ You can also use the [`libp2p.connections`](https://github.com/libp2p/js-libp2p/
     - Add a new listener for the `peer:connect` and print out the PeerId for the `remotePeer` in the body of the listener
     - Run it and you should see a list of your node's multiaddrs
 
+
+<!-- ### Events
+Once you have a libp2p instance running, you can listen to several events to trigger certain actions. 
+An example can be -
+```bash
+libp2p.on('error', (err) => {})
+```
+This is an instance for listening to an error in Libp2p. Another example could be if it finds a new peer to connect to -
+```bash
+libp2p.on('peer:discovery', (peer) => {})
+```
+ > Note - You can learn more about these listeners in the official documentation [here](https://github.com/libp2p/js-libp2p/blob/master/doc/API.md#events) -->
+
+
 <!-- tabs:start -->
 
 #### ** Template **

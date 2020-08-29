@@ -1,6 +1,8 @@
 ## Getting your system ready
 > The complete tutorial could be practiced online in the browser with no local setup, as the tutorial provides an interactive code editor though it is highly recommended to run the code directly from the system. 
 
+### To use the online editor
+If you don't want to go through with the process of local installation, you can directly skip to [Chapter 1](1/introduction.md) to continue with the online editor.
 
 ### To install everything directly in the system:
 
@@ -32,7 +34,3 @@ sudo apt-get install npm
 npm -v 
 ```
     - For other operating systems, please check the [official download page](https://nodejs.org/en/download/) of [node.js](https://nodejs.org/en/).
-
-### To use the online editor
-If you don't want to go through with the process of local installation, you can directly skip to [Chapter 1](1/introduction.md) to continue with the online editor.
-
