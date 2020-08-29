@@ -21,9 +21,10 @@
     + [Secure your Bootstrap!](3/1_encrypted_bootstrap.md)
 
 - [**#4 Peer Discovery**](4/introduction.md)
-    + [Bootstrap](4/0_bootstrap.md)
-    + [MDns](4/1_mdns.md)
-    + [DHT](4/2_dht.md)
+    + [MDns](4/0_mdns.md)
+    + [DHT](4/1_dht.md)
+    + [DHTs in General](4/2_dht_general.md)
+    + [Kademlia](4/3_kademlia.md)
 
 - [**#5 Mplex and Chat Protocol**](5/introduction.md)
     + [Create Chat Protocol](5/0_create_protocol.md)
