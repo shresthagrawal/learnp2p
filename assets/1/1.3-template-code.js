@@ -26,7 +26,8 @@ async function main() {
     // Create a libp2p instance
     let libp2p = await Libp2p.create(options)
 
-    // Start libp2p
+    // TODO: start libp2p node
+    // TODO: console log `Libp2p Started`
 }
 
 main()

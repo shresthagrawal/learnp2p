@@ -3,9 +3,7 @@ Js Libp2p Chat Tutorial
 > Getting your hands dirty with libp2p!
 
 ## What is this?
-This is an interactive self-placed workshop. The aim of this workshop is to help the **p2p enthusiasts** to get started with libp2p. Through this workshop you will be able to build a completely decentralized chat system using the open source framework [js-libp2p](https://github.com/libp2p/js-libp2p/).  
-
-The material here will focus on making you understand the dictionary of libp2p, then find a right documentation, and apply it by yourself. 
+This is an interactive self-placed workshop. The aim of this workshop is to help the **libp2p enthusiasts** to get started with libp2p. Through this workshop you will be able to build a completely decentralized chat system using the open source framework [js-libp2p](https://github.com/libp2p/js-libp2p/).  
 
 >This workshop currently only focuses on the node.js implementation of libp2p!
 
