@@ -48,7 +48,7 @@ let options = {
     }
 }
 
-async function dialPeers(message, libp2p) {
+async function dialPeers(libp2p) {
 }
 
 

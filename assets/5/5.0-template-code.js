@@ -9,7 +9,7 @@ function send (stream) {
 }
 
 function receive (stream) {
-    // TODO: pipe  the data from stream to the console
+    // TODO: pipe the data from stream to the console
 }
 
 module.exports = {
