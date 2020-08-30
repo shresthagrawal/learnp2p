@@ -6,11 +6,9 @@ const TCP = require('libp2p-tcp')
 const WS = require('libp2p-websockets')
 const WStar = require('libp2p-webrtc-star')
 const Wrtc = require('wrtc')
-// require  libp2p/src/insecure/plaintext module
 
 const transportKey = WStar.prototype[Symbol.toStringTag]
 
-// TODO: modify options to include `connEncryption` and use Plaintext
 let options = {
     modules: {
         transport: [ TCP, WS, WStar ]
@@ -28,15 +26,14 @@ async function main() {
     // Create a libp2p instance
     let libp2p = await Libp2p.create(options)
 
-    // Add 'peer:connect' listener as above, refer to documentation
-    // Inside the listener print the address of the connected peer
+    // TODO: Add 'peer:connect' listener, inside the listener print the peerId of the connected peer
 
     libp2p.peerInfo.multiaddrs.add('/ip4/0.0.0.0/tcp/0')
     libp2p.peerInfo.multiaddrs.add('/ip4/0.0.0.0/tcp/0/ws')
 
     await libp2p.start();
     console.info(`Libp2p Started`)
-    // Use libp2p.peerinfo.multiaddrs to print the list of addresses
+    libp2p.peerInfo.multiaddrs.forEach(ma => console.log(ma.toString()))
 }
 
 main()
