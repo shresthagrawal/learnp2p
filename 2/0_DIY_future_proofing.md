@@ -6,7 +6,7 @@ We talked a lot about how awesome libp2p is as a modular and future-proof networ
 Try it yourself
 ---------------
 * Install the correct version of the multiaddr library: `^6.1.0` or above
-* Add ('/ip4/0.0.0.0/tcp/0') tcp and ('/ip4/0.0.0.0/tcp/0/ws') websocket multi address to the nodes. 
+* Add (`/ip4/0.0.0.0/tcp/0`) tcp and (`/ip4/0.0.0.0/tcp/0/ws`) websocket multi address to the nodes. 
 > Note that using 0 as port automatically takes any available port 
 * Console log all the multiaddress associated to the node
 * Run the code, do you see a multiaddress with `tcp` and `ws` ?  If so, congratulations, you have just demonstrated future-proofing and modularity!
