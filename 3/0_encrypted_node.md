@@ -1,12 +1,10 @@
 ## Securing our communication
-
-Now that we understand how libp2p secures communication between nodes, let's get down to business.  Our node currently sends data in plain text over the wire so anyone can listen in.  As mentioned previously, libp2p offers two encryption modules out of the box, `secio` and `noise`.  It's beyond the scope of this tutorial to go into all the [nuances of each and which to pick](https://forum.web3.foundation/t/transport-layer-authentication-libp2ps-secio/69), but we're going to use `noise`, since `secio` is in the process of being deprecated as of the time of this writing. 
-
+Now that we understand how libp2p secures communication between nodes, let's get down to business.  
 
 Try it yourself
 ===============
 - Install secio `npm i libp2p-noise`
-- `Require` noise - warning here: The `noise` object you need for the `option` configuration object is a named export from `libp2p-noise` so make sure you require it like 
+- Add `noise` module
 ```javascript
 const { NOISE } = require('libp2p-noise')
 ```
@@ -14,16 +12,18 @@ const { NOISE } = require('libp2p-noise')
 ```javascript
 new Libp2p({
    modules: {
-     connEncryption: [NOISE]
+    ...
+    connEncryption: [NOISE]
    }
 }
 ```
 - Try running the bootstrap node created in 2.2 and then connect this node to it
 - What error do you see?  
 
-The error you're seeing here - `Error: Protocol Selection Failed` - is that your bootstrap node isn't configured to support `noise` so the node dialing into your bootstrap can't connect.  In libp2p, nodes have to match on protocol and supported transport/encryption modules to be able to communicate.  
+The error you're seeing here - `Error: Protocol Selection Failed` - is that your bootstrap node isn't configured to support `noise` .  As said before, nodes have to have same encryption modules to be able to communicate.  
 
-In the next section, we'll resolve this issue and finally have the secured communication we've been hoping for.
+In the next section, we'll resolve this issue!
+
 <!-- tabs:start -->
 
 #### ** Template **
