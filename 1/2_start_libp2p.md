@@ -1,14 +1,15 @@
 ## Starting our Libp2p node
+
 Now since we have configured the transport, we can start our libp2p node by calling `libp2p.start()` inside the main.
 
 ### Your Turn
+
 - Start the libp2p node using `await libp2p.start()` inside the main.
 - Console log `Libp2p Started` after the node is successfully up.
 
 > Tip - For those running locally, you should be able to see the log started by libp2p.
 
 This successfully concludes Chapter 1 of our quest to create a js-libp2p-chat tutorial. See you in the next chapter!
-
 
 <!-- tabs:start -->
 

@@ -1,0 +1,46 @@
+{
+  "name": "jslibp2p-chat-tutorial",
+  "version": "1.0.0",
+  "description": "Js Libp2p Chat Tutorial",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "@babel/eslint-parser": "^7.12.1",
+    "@babel/eslint-plugin": "^7.12.1",
+    "@babel/preset-env": "^7.12.1",
+    "eslint": "^7.11.0",
+    "eslint-config-prettier": "^6.13.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "husky": "^4.3.0",
+    "lint-staged": "^10.4.2",
+    "prettier": "^2.1.2"
+  },
+  "scripts": {
+    "prettier-fix": "prettier --write './**/*.{json,md,html}'",
+    "eslint-fix": "eslint --fix './**/*.{js,jsx,css}'"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "./**/*.{js,jsx,css}": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "./**/*.{json,md,html}": [
+      "prettier --write"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shresthagrawal/jslibp2p-chat-tutorial.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/shresthagrawal/jslibp2p-chat-tutorial/issues"
+  },
+  "homepage": "https://github.com/shresthagrawal/jslibp2p-chat-tutorial#readme"
+}
