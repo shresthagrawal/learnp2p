@@ -1,14 +1,18 @@
 ## Securing our communication
-Now that we understand how libp2p secures communication between nodes, let's get down to business.  
 
-Try it yourself
-===============
+Now that we understand how libp2p secures communication between nodes, let's get down to business.
+
+# Try it yourself
+
 - Install secio `npm i libp2p-noise`
 - Add `noise` module
+
 ```javascript
 const { NOISE } = require('libp2p-noise')
 ```
+
 - Update the `options` in your node configuration as below
+
 ```javascript
 new Libp2p({
    modules: {
@@ -17,10 +21,11 @@ new Libp2p({
    }
 }
 ```
-- Try running the bootstrap node created in 2.2 and then connect this node to it
-- What error do you see?  
 
-The error you're seeing here - `Error: Protocol Selection Failed` - is that your bootstrap node isn't configured to support `noise` .  As said before, nodes have to have same encryption modules to be able to communicate.  
+- Try running the bootstrap node created in 2.2 and then connect this node to it
+- What error do you see?
+
+The error you're seeing here - `Error: Protocol Selection Failed` - is that your bootstrap node isn't configured to support `noise` . As said before, nodes have to have same encryption modules to be able to communicate.
 
 In the next section, we'll resolve this issue!
 
