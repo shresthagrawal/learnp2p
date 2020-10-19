@@ -23,12 +23,13 @@ Each node in this network is represented by a circle and each one has its own si
 Let's step through the process of a search query coming from `node 0` and hopefully arriving at `node 15`.
 
 Below is an abstraction of `node 0`'s peer routing table in the context of finding `node 15`:
+
 | Node 0 Routing Table | XOR Distance to Node 15 |
-|:--------------------:|:-----------------------:|
-| Node 1 | 14 (\|1^15\|) |
-| Node 2 | 13 (\|2^15\|) |
-| Node 4 | 11 (\|4^15\|) |
-| Node 8 | 7 (\|8^15\|) |
+| -------------------- | ----------------------- |
+| Node 1               | 14 (\|1^15\|)           |
+| Node 2               | 13 (\|2^15\|)           |
+| Node 4               | 11 (\|4^15\|)           |
+| Node 8               | 7 (\|15^8\|)            |
 
 In order to begin searching for `node 15`, `node 0` contacts `node 8` which is the closest (lowest XOR distance) `node 0` knows to `node 15`<sup>1</sup>.
 
