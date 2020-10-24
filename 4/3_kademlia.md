@@ -8,17 +8,17 @@ In the `js-libp2p` implementation of Kademlia, the hashing function is a SHA-256
 
 ### Why XOR metric is so rewarding?
 
-Using this metric to choose which nodes to hop to based on a request makes it highly probable to take at most c * log(n) steps to locate any node in the network, where n is the number of nodes and c is a constant. The distance therefore is unique and not ambiguous between nodes with close keys.
+Using this metric to choose which nodes to hop to based on a request makes it highly probable to take at most c \* log(n) steps to locate any node in the network, where n is the number of nodes and c is a constant. The distance therefore is unique and not ambiguous between nodes with close keys.
 
-Compared to the Euclidean Distance which is calculated as |a - b| (e.g. |3 - 5| = 2), XOR Distance is calculated as |a ^ b| (e.g. 3 ^ 5 = 6 in decimal; 011 ^ 101 = 110 in binary). More information on XOR operation can be found [here](https://en.wikipedia.org/wiki/XOR_gate#Applications "XOR Operation Applications on Wikipedia").
+Compared to the Euclidean Distance which is calculated as |a - b| (e.g. |3 - 5| = 2), XOR Distance is calculated as |a ^ b| (e.g. 3 ^ 5 = 6 in decimal; 011 ^ 101 = 110 in binary). More information on XOR operation can be found [here](https://en.wikipedia.org/wiki/XOR_gate#Applications 'XOR Operation Applications on Wikipedia').
 
-Therefore, Kademlia stores information at the k closest nodes to the object's IDs and the distance between it and each node is the same as from the nodes to the information (different from the distance used in [Chord](https://en.wikipedia.org/wiki/Chord_(peer-to-peer) "Chord on Wikipedia"), another DHT implementation).
+Therefore, Kademlia stores information at the k closest nodes to the object's IDs and the distance between it and each node is the same as from the nodes to the information (different from the distance used in [Chord](<https://en.wikipedia.org/wiki/Chord_(peer-to-peer)> 'Chord on Wikipedia'), another DHT implementation).
 
 ### Searching in Kademlia
 
 [VISUAL]
 
-Each node in this network is represented by a circle and each one has its own simple identifier. Node 0 is connected to nodes 1, 2, 4 and 8 in this example. 
+Each node in this network is represented by a circle and each one has its own simple identifier. Node 0 is connected to nodes 1, 2, 4 and 8 in this example.
 
 Let's step through the process of a search query coming from node 0 and hopefully arriving at node 15.
 
@@ -32,7 +32,7 @@ Each node therefore has partial information, local view, about the network, thou
 
 Kademlia works by maintaining a routing table, a way to look up and store nodes that are of interest to each node.
 
-These nodes choose a selected number of entries to keep in the list of their known peers and to form a data structure called `K-Buckets`. 
+These nodes choose a selected number of entries to keep in the list of their known peers and to form a data structure called `K-Buckets`.
 Every time they come into contact through requests with other nodes, they can update their routing table to maintain the stabler and longer connections, and to keep the most (profitable) connections (those at key positions away from the node).
 
 Multiple other techniques are used to keep the network running and to keep it secure.

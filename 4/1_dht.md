@@ -1,6 +1,6 @@
 ## Distributed Hash Tables and a phonebook
 
-A distributed hash table is a data structure where you can store entries connected to a key similarly to hash tables. 
+A distributed hash table is a data structure where you can store entries connected to a key similarly to hash tables.
 
 Here is a simple parallel idea we can build upon to create an idea what a DHT is:
 
@@ -22,7 +22,7 @@ In the same way, in a distributed network, each peer has a table with peers they
 
 ## js-libp2p-kad-dht
 
-`js-libp2p-kad-dht` is a JavaScript implementation of the Kademlia DHT with some flavour features of the more secure implementation S/Kademlia. 
+`js-libp2p-kad-dht` is a JavaScript implementation of the Kademlia DHT with some flavour features of the more secure implementation S/Kademlia.
 
 In order to connect nodes with each other and with content, unique identification for the nodes and the content spread through the network in `js-libp2p` is done using sha2-256 hash:
 
@@ -51,7 +51,7 @@ If you would like to learn more about DHTs and Kademlia's implementation, you ca
 
 First, the `libp2p-kad-dht` module has to be loaded by requiring it. Next, in order to properly use this implementation, it has to be added to the modules `dht` entry as the module of our choice and it must be configured.
 
-For the configuration of the `dht` module we have chosen, there are many options that can be set, including even the size of the lists (also known as buckets) used in locating the peers each node knows. We will set `enabled` option for the `dht` to `true` and `randomwalk`, which is a discovery service of peers in the network, with its own `enabled` option to be `true`. 
+For the configuration of the `dht` module we have chosen, there are many options that can be set, including even the size of the lists (also known as buckets) used in locating the peers each node knows. We will set `enabled` option for the `dht` to `true` and `randomwalk`, which is a discovery service of peers in the network, with its own `enabled` option to be `true`.
 
 Now hopefully we have set it up correctly and the nodes in our network will automatically start reaching out to other nodes and exchanging information.
 
