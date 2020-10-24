@@ -31,7 +31,8 @@ In order to connect nodes with each other and with content, unique identificatio
 
 ### Searching in the network
 
-When wanting to search for a node that is not on your list of nearest peers (your friends in the example above), the identifier of the node being search for is calculated. Then a request is sent to each of the nearest peers to that identifier that the querying node knows. Those peers either respond with their own response if the node is in their table or they send a request to the peers with the closest identifier to the one being search for. This recursive process queries the closest peers to the identifier, continuing until it finds the node or until it has queried all the closest peers.
+When wanting to search for a node that is not on your list of nearest peers (your friends in the example above), the identifier of the node being searched for is calculated. A request is then sent to a subset (size equal to some chosen concurrent requests value) of the nearest peers to that identifier which the querying node knows. The contacted peers either respond with the requested peer identifier's information if the node is in their peer table, or if not, they will return information on the closest node(s) to the requested identifier which they know of.
+The node which initiated the lookup then uses this acquired information to iteratively request peer information from closer nodes until finally, the information of the node which they initially requested is found.
 
 ### Placing information in the network
 
