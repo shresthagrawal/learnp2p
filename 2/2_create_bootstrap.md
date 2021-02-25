@@ -1,16 +1,19 @@
+# Bootstrap
 
-* What is bootstrap? why do we need it?
-* What properties does a boot startap node has
-* By default how libp2p already gives an ipfs address and how we can fix a address for the bootstrap for easier purpose
-* Make sure you have only one bootstrap running, because you cant have 2 nodes listening to the same port and address
+When you join a decentralised network who do you connect to first? There isn't any centralised server to start communication?
 
-Try it yourself
-* Create a copy of index.js ad bootstrap.js 
-* Add a fixed address
-* Change the ports from '0'(which sets to the best open port) to a specific port.
+The answer is `bootstrap` nodes. These are a set of nodes which anyone can dail into to get into the decentralised network. Ideally a bootstrap node has a specific address (`peerId` + `transport running on a specific port`) such that it is always accessible to a new node joining the network.  
+Lets build one for our `awesome-chat-system`
 
-Run it Locally, what do you see?
-* Do you see ports and address specified? 
+<!-- explain bootstrap needs specific ports -->
+
+# Try it yourself
+
+- Create a copy of `index.js` to `bootstrap.js` and perform the below step on the `bootstrap.js` code.
+- Modify `options` add a fixed address to the `bootstrap` node
+- Change the tcp port from `0` to `63685`, and ws port from `0` to `63786`
+- Run it Locally, what do you see?
+- Do you see ports and address specified?
 
 <!-- tabs:start -->
 
@@ -27,4 +30,3 @@ Run it Locally, what do you see?
 [embedded-code-previous](../assets/2/2.1-finished-code.js ':include :type=code embed-previous')
 
 <!-- tabs:end -->
-
