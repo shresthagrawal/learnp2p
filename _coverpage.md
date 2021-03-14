@@ -6,6 +6,7 @@
 
 [Get Started](README.md)
 [GitHub](https://github.com/shresthagrawal/jslibp2p-chat-tutorial)
+[Support Us](https://gitcoin.co/grants/2118/learnp2p)
 
 <!-- Overwrite Background Image with black -->
 
