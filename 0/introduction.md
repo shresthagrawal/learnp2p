@@ -18,7 +18,7 @@ Though the above definition is enough, the resource that can answer this questio
 
 The repository of libp2p is continuously changing, which means that there can arise some discrepancies such as :
 
-- The updated version no more supports the API explained in the workshop, in which case you must create an issue [here](https://github.com/shresthagrawal/jslibp2p-chat-tutorial/issues).
+- The updated version no more supports the API explained in the workshop, in which case you must create an issue [here](https://github.com/shresthagrawal/learnp2p/issues).
 
 - If you are referring to a wrong version of the documentation. Please check the exact version of the documentation that you are using. You can always find the your version of library in your `package.json` file.
 

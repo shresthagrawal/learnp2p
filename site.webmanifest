@@ -1,6 +1,6 @@
 {
-   "name":"Js-Libp2p Chat Tutorial",
-   "short_name":"Js-Libp2p Chat",
+   "name":"learnp2p",
+   "short_name":"learnp2p",
    "icons":[
       {
          "src":"/media/libp2p.png",
