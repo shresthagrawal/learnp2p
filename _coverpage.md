@@ -6,6 +6,7 @@
 
 [Get Started](README.md)
 [GitHub](https://github.com/shresthagrawal/learnp2p)
+[Support Us](https://gitcoin.co/grants/2118/learnp2p)
 
 <!-- Overwrite Background Image with black -->
 
