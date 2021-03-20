@@ -45,5 +45,5 @@
 <!-- - [Glossary](https://substrate.dev/docs/overview/glossary) -->
 
 - [Documentation](https://github.com/libp2p/js-libp2p/blob/master/README.md)
-- [Report an Issue](https://github.com/shresthagrawal/jslibp2p-chat-tutorial/issues)
+- [Report an Issue](https://github.com/shresthagrawal/learnp2p/issues)
 <!-- - [r/substrate](https://www.reddit.com/r/substrate) -->

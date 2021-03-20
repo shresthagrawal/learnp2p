@@ -1,7 +1,7 @@
 {
-  "name": "jslibp2p-chat-tutorial",
+  "name": "learnp2p",
   "version": "1.0.0",
-  "description": "Js Libp2p Chat Tutorial",
+  "description": "Learn libp2p by building a distributed chat application",
   "dependencies": {},
   "devDependencies": {
     "@babel/core": "^7.12.3",
@@ -35,12 +35,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/shresthagrawal/jslibp2p-chat-tutorial.git"
+    "url": "https://github.com/shresthagrawal/learnp2p.git"
   },
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/shresthagrawal/jslibp2p-chat-tutorial/issues"
+    "url": "https://github.com/shresthagrawal/learnp2p/issues"
   },
-  "homepage": "https://github.com/shresthagrawal/jslibp2p-chat-tutorial#readme"
+  "homepage": "https://github.com/shresthagrawal/learnp2p#readme"
 }

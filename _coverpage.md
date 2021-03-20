@@ -5,7 +5,7 @@
 > Getting your hands dirty with Js-Libp2p!
 
 [Get Started](README.md)
-[GitHub](https://github.com/shresthagrawal/jslibp2p-chat-tutorial)
+[GitHub](https://github.com/shresthagrawal/learnp2p)
 
 <!-- Overwrite Background Image with black -->
 
