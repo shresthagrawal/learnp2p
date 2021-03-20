@@ -1,54 +1,86 @@
 <!-- index.html -->
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="./resources/styles/dark.css">
-    <link rel="stylesheet" href="./resources/styles/custom.css">
-    <link rel="apple-touch-icon" sizes="180x180" href="./media/logo_small.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./media/favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./media/favicons/favicon-16x16.png">
-    <link rel="manifest" href="./site.webmanifest">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="./resources/styles/dark.css" />
+    <link rel="stylesheet" href="./resources/styles/custom.css" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./media/logo_small.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./media/favicons/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./media/favicons/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./site.webmanifest" />
     <!-- Klaro scripts – Cookie consent manager -->
-    <script defer type="text/javascript" src="./resources/js/klaro-config.js"></script>
-    <script defer type="text/javascript" src="https://substrate.dev/js/klaro.min.js"></script>
+    <script
+      defer
+      type="text/javascript"
+      src="./resources/js/klaro-config.js"
+    ></script>
+    <script
+      defer
+      type="text/javascript"
+      src="https://substrate.dev/js/klaro.min.js"
+    ></script>
     <!-- Global site tag (gtag.js) - Google Analytics with Klaro script -->
-    <script async type="opt-in" data-type="application/javascript" data-src="https://www.googletagmanager.com/gtag/js?id=UA-158673459-1" data-name="googleAnalytics"></script>
-    <script type="opt-in" data-type="application/javascript" data-name="googleAnalytics">
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'UA-158673459-1');
+    <script
+      async
+      type="opt-in"
+      data-type="application/javascript"
+      data-src="https://www.googletagmanager.com/gtag/js?id=UA-158673459-1"
+      data-name="googleAnalytics"
+    ></script>
+    <script
+      type="opt-in"
+      data-type="application/javascript"
+      data-name="googleAnalytics"
+    >
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-158673459-1');
     </script>
   </head>
   <body>
-    <div id="app"> Getting things ready!</div>
+    <div id="app">Getting things ready!</div>
     <script>
       window.$docsify = {
-        repo: 'https://github.com/shresthagrawal/jslibp2p-chat-tutorial/',
+        repo: 'https://github.com/shresthagrawal/learnp2p/',
         loadSidebar: true,
         coverpage: true,
         onlyCover: true,
         themeable: {
           readyTransition: true, // default
-          responsiveTables: true  // default
+          responsiveTables: true, // default
         },
         auto2top: true,
         mergeNavbar: true,
         search: {
           noData: {
-            '/': 'No results!'
+            '/': 'No results!',
           },
           placeholder: {
-            '/': 'Search'
-          }
+            '/': 'Search',
+          },
         },
         pagination: {
-          crossChapter: true
-        }
-      };
+          crossChapter: true,
+        },
+      }
     </script>
     <script src="https://unpkg.com/docsify/lib/docsify.min.js"></script>
     <script src="https://unpkg.com/docsify-pagination@2.4.0/dist/docsify-pagination.min.js"></script>
@@ -57,15 +89,23 @@
     <script src="https://unpkg.com/docsify/lib/plugins/search.min.js"></script>
     <script src="https://unpkg.com/prismjs/components/prism-bash.min.js"></script>
     <!-- Custom JS for CodeView -->
-    <script defer type="text/javascript" src="//unpkg.com/monaco-editor@0.15.6/min/vs/loader.js"></script>
+    <script
+      defer
+      type="text/javascript"
+      src="//unpkg.com/monaco-editor@0.15.6/min/vs/loader.js"
+    ></script>
     <script defer src="./resources/js/codeview.js"></script>
     <!-- Gitter Chat -->
     <script>
-      ((window.gitter = {}).chat = {}).options = {
+      ;((window.gitter = {}).chat = {}).options = {
         room: 'libp2p-enthusiasts/community',
-        activationElement: true
-      };
+        activationElement: true,
+      }
     </script>
-    <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+    <script
+      src="https://sidecar.gitter.im/dist/sidecar.v1.js"
+      async
+      defer
+    ></script>
   </body>
 </html>

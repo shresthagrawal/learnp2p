@@ -46,5 +46,5 @@
 
 - [Support Us](https://gitcoin.co/grants/2118/learnp2p)
 - [Documentation](https://github.com/libp2p/js-libp2p/blob/master/README.md)
-- [Report an Issue](https://github.com/shresthagrawal/jslibp2p-chat-tutorial/issues)
+- [Report an Issue](https://github.com/shresthagrawal/learnp2p/issues)
 <!-- - [r/substrate](https://www.reddit.com/r/substrate) -->
