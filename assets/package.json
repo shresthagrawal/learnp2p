@@ -13,7 +13,7 @@
   "license": "ISC",
   "dependencies": {
     "it-pipe": "^1.1.0",
-    "libp2p": "^0.27.6",
+    "libp2p": "^0.38.0",
     "libp2p-bootstrap": "^0.10.4",
     "libp2p-gossipsub": "^0.3.0",
     "libp2p-kad-dht": "^0.18.6",
